@@ -32,13 +32,8 @@
   .plan li { margin-block: .35rem; }
   .activity { border-top: 1px solid var(--line); padding-top: 1.15rem; }
   .options { display: grid; gap: .5rem; margin-block: .8rem; }
-  .option[aria-current="true"] { outline: 3px solid var(--accent); outline-offset: 2px; }
-  .voices { padding-inline-start: 1.35rem; }
-  .voices li { margin-block: .4rem; }
-  .decision label { display: block; font-weight: 700; margin-block: .75rem .25rem; }
   .feedback { border-inline-start: .25rem solid var(--accent); padding: .5rem .8rem; margin: .5rem 0 .9rem; }
   .feedback:empty { padding: 0; border: 0; margin: 0; }
-  .feedback p:last-child { margin-bottom: 0; }
   .compare { margin-top: 1rem; padding: .9rem; background: var(--paper); border-radius: .5rem; }
   .navigation { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .3rem; }
   .navigation .back { background: var(--white); color: var(--accent); }
@@ -60,7 +55,7 @@
     <p class="eyebrow">Ομάδα 1 από 4</p>
     <h1>Η είσοδος</h1>
     <h2>Το σενάριο της ομάδας σας</h2>
-    <p>Σήμερα η τάξη σας παρουσιάζει μια εργασία στο εργαστήριο. Ο Άρης, που χρησιμοποιεί αμαξίδιο, φτάνει μαζί με τους συμμαθητές του. Στην κεντρική είσοδο υπάρχει ένα σκαλοπάτι. Λίγο πιο κάτω υπάρχει μια πλαϊνή πόρτα χωρίς σκαλοπάτι. Από πού μπορεί να μπει στην αυλή;</p>
+    <p>Ο Άρης είναι στην Α΄ Λυκείου και χρησιμοποιεί αμαξίδιο. Η κεντρική πύλη του σχολείου έχει σκαλοπάτια. Στην πλαϊνή είσοδο υπάρχει ράμπα. Η ομάδα σας θα δει τι χρειάζεται για να μπορεί να μπαίνει στο σχολείο κάθε μέρα.</p>
   </header>
   <noscript><p>Για τις διαδραστικές δοκιμές χρειάζεται ενεργοποιημένη JavaScript.</p></noscript>
   <div class="work">
@@ -68,31 +63,21 @@
       <section class="panel" aria-labelledby="mission-title">
         <h2 id="mission-title">Η αποστολή σας · περίπου 60 λεπτά</h2>
         <ol class="plan">
-          <li><strong>5 λεπτά</strong> · Διαβάστε την ιστορία. Ένας πατά τις επιλογές, ένας κρατά σημειώσεις και ένας προσέχει τον χρόνο.</li>
-          <li><strong>10 λεπτά</strong> · Κάντε τις τρεις σύντομες δοκιμές. Πριν πατήσετε κάθε επιλογή, πείτε τι νομίζετε ότι θα γίνει.</li>
-          <li><strong>30 λεπτά</strong> · Παίξτε τρία επεισόδια, περίπου 10 λεπτά το καθένα. Μοιραστείτε τις ατάκες, συγκρίνετε τουλάχιστον δύο επιλογές και γράψτε γιατί διαλέγετε τη μία. Η απόφασή σας αλλάζει το επόμενο επεισόδιο.</li>
-          <li><strong>10 λεπτά</strong> · Διαβάστε τις τρεις αποφάσεις σας. Διαλέξτε εκείνη που άλλαξε περισσότερο τι μπορούσε να κάνει ο Άρης και συγκρίνετέ τη με μια άλλη λύση.</li>
-          <li><strong>5 λεπτά</strong> · Κάντε πρόβα για να πείτε το εύρημά σας στην τάξη σε ένα λεπτό.</li>
+          <li><strong>5 λεπτά</strong> · Διαβάστε την εισαγωγή. Μοιράστε ποιος διαβάζει, ποιος πατά τα κουμπιά και ποιος κρατά σημειώσεις. Αλλάξτε ρόλους σε κάθε περίπτωση.</li>
+          <li><strong>30 λεπτά</strong> · Δουλέψτε τις τρεις περιπτώσεις, περίπου 10 λεπτά την καθεμία. Πείτε πρώτα τι θα κάνατε. Ανοίξτε και τις δύο επιλογές και κρατήστε μία σύντομη σημείωση από τη συζήτησή σας.</li>
+          <li><strong>15 λεπτά</strong> · Διαλέξτε μία περίπτωση. Συμφωνήστε τι θα κάνατε σήμερα και τι θα ζητούσατε να αλλάξει για τις επόμενες μέρες. Γράψτε την πρότασή σας.</li>
+          <li><strong>10 λεπτά</strong> · Ανταλλάξτε προτάσεις με άλλη ομάδα. Ρωτήστε ποιος θα κάνει την αλλαγή και τι μένει άλυτο. Βελτιώστε μία πρόταση με βάση την απάντησή τους.</li>
         </ol>
         <div class="activity">
           <p class="eyebrow" id="progress"></p>
           <h3 id="step-title" tabindex="-1"></h3>
-          <p id="lead" hidden></p>
           <p id="question"></p>
-          <div id="voices-panel" hidden>
-            <h4>Μοιραστείτε τις ατάκες και διαβάστε τες δυνατά</h4>
-            <ul id="voices" class="voices"></ul>
-          </div>
-          <p id="instruction" class="muted" role="status"></p>
+          <p>Πείτε τι θα κάνατε και μετά πατήστε Α και Β για να δείτε τι αλλάζει.</p>
           <div class="options" id="options" role="group" aria-labelledby="step-title"></div>
           <div id="compare" class="compare" hidden>
-            <h3>Συζητήστε στην ομάδα</h3>
+            <h3>Συζητήστε πριν προχωρήσετε</h3>
             <p id="comparison"></p>
-            <div id="decision" class="decision" hidden>
-              <p id="chosen"></p>
-              <label for="reason">Γιατί κρατάτε αυτή την επιλογή;</label>
-              <textarea id="reason" rows="2" maxlength="350" placeholder="Πείτε τι κερδίζει ο Άρης και τι θα γινόταν με μια άλλη επιλογή."></textarea>
-            </div>
+            <p>Συμφωνήστε τι θα κάνατε και κρατήστε μία πρόταση για το τέλος.</p>
           </div>
           <div class="navigation">
             <button class="action back" id="back" type="button" hidden>Προηγούμενο βήμα</button>
@@ -102,19 +87,17 @@
       </section>
     </div>
     <section class="panel" id="record" aria-labelledby="record-title" hidden>
-      <h2 id="record-title" tabindex="-1">Γράψτε την απάντησή σας · 10 λεπτά</h2>
-      <h3>Οι τρεις αποφάσεις σας</h3>
-      <ol id="recap"></ol>
-      <p>Διαλέξτε την απόφαση που άλλαξε περισσότερο τι μπορούσε να κάνει ο Άρης. Συγκρίνετέ τη με μία άλλη επιλογή που δοκιμάσατε στο ίδιο επεισόδιο.</p>
+      <h2 id="record-title" tabindex="-1">Γράψτε την πρότασή σας · 15 λεπτά</h2>
+      <p>Διαλέξτε μία από τις τρεις περιπτώσεις. Μπορείτε να συνδυάσετε τις επιλογές ή να προτείνετε δική σας λύση.</p>
       <form id="finding-form">
-        <label for="spot">Σε ποιο επεισόδιο;</label>
-        <input id="spot" maxlength="160" required placeholder="Γράψτε τον τίτλο ή τον αριθμό του επεισοδίου.">
-        <label for="barrier">Ποιο είναι το εμπόδιο;</label>
-        <textarea id="barrier" rows="2" maxlength="350" required placeholder="Τι θέλει να κάνει ο Άρης και τι τον δυσκολεύει;"></textarea>
-        <label for="change">Τι αποφασίσατε;</label>
-        <textarea id="change" rows="2" maxlength="350" required placeholder="Γράψτε ποια επιλογή στηρίζετε."></textarea>
-        <label for="check">Τι αλλάζει σε σχέση με την άλλη επιλογή;</label>
-        <textarea id="check" rows="2" maxlength="350" required placeholder="Πείτε τι θα μπορούσε να κάνει ο Άρης με καθεμία από τις δύο επιλογές."></textarea>
+        <label for="spot">Ποια περίπτωση διαλέξατε;</label>
+        <input id="spot" maxlength="160" required placeholder="Γράψτε τον τίτλο ή τον αριθμό της.">
+        <label for="barrier">Τι δυσκολεύει τον Άρη;</label>
+        <textarea id="barrier" rows="2" maxlength="350" required placeholder="Πείτε τι προσπαθεί να κάνει και τι τον εμποδίζει."></textarea>
+        <label for="change">Τι θα κάνατε σήμερα;</label>
+        <textarea id="change" rows="2" maxlength="350" required placeholder="Γράψτε μία ενέργεια και ποιος θα την κάνει."></textarea>
+        <label for="check">Τι πρέπει να αλλάξει για τις επόμενες μέρες;</label>
+        <textarea id="check" rows="2" maxlength="350" required placeholder="Ποιος μπορεί να το αναλάβει; Πώς βοηθά η αλλαγή τον Άρη;"></textarea>
         <button class="action" type="submit">Ετοιμάστε την απάντησή σας</button>
       </form>
       <div id="finding-output" hidden>
@@ -122,319 +105,134 @@
         <textarea id="report" rows="7" readonly></textarea>
         <button class="action" type="button" id="copy">Αντιγραφή ευρήματος</button>
         <p id="copy-status" role="status"></p>
-        <h3>Ετοιμάστε τι θα πείτε · 5 λεπτά</h3>
-        <p>Διαλέξτε ποιος θα μιλήσει. Κάντε μια πρόβα ενός λεπτού. Πείτε στην τάξη τι συνέβη στο επεισόδιο που διαλέξατε, ποια απόφαση πήρατε και τι μπόρεσε να κάνει ο Άρης χάρη σε αυτήν.</p>
+      </div>
+      <div class="compare">
+        <h3>Ανταλλάξτε προτάσεις · 10 λεπτά</h3>
+        <p>Διαβάστε την πρότασή σας σε μια άλλη ομάδα και ακούστε τη δική της. Ρωτήστε ο ένας τον άλλον «Ποιος το αναλαμβάνει;» και «Τι μένει άλυτο;». Αλλάξτε κάτι στην απάντησή σας και πατήστε ξανά «Ετοιμάστε την απάντησή σας».</p>
       </div>
     </section>
   </div>
 </main>
-<footer>Η ιστορία του Άρη διαδραματίζεται σε ένα φανταστικό σχολείο.</footer>
+<footer><p>Οι ιστορίες είναι γραμμένες για το μάθημα και βασίζονται σε εμπόδια που έχουν καταγραφεί σε σχολεία.</p>
+  <p><a href="https://storymaps.arcgis.com/stories/a42940d9d44a428bbf62fc204a077519">Μαθητική έρευνα για τις εισόδους του σχολικού συγκροτήματος στη Χαλκίδα</a></p></footer>
 <script>
-const stops = [
+const cases = [
   {
-    "title": "Από ποια πόρτα;",
-    "question": "Ξεκινήστε από το πεζοδρόμιο και δοκιμάστε και τις δύο εισόδους.",
+    "title": "Πριν από το πρώτο κουδούνι",
+    "situation": "Η κεντρική πύλη είναι ανοιχτή. Η πλαϊνή πόρτα με τη ράμπα είναι κλειδωμένη. Ο Άρης στέλνει μήνυμα σε συμμαθητή του που είναι ήδη μέσα. Το κλειδί είναι στο γραφείο.",
     "options": [
       [
-        "Κεντρική είσοδος",
-        "Ένα σκαλοπάτι στην πύλη",
-        "Ο Άρης φτάνει στην πύλη, αλλά το σκαλοπάτι τού κλείνει τον δρόμο.",
-        "Σταματά στο σκαλοπάτι"
+        "Ο συμμαθητής ειδοποιεί το γραφείο όταν φτάνει ο Άρης",
+        "Η πόρτα ανοίγει σήμερα. Αν όμως ο συμμαθητής λείπει ή δεν δει το μήνυμα, ο Άρης μπορεί να περιμένει πάλι έξω."
       ],
       [
-        "Πλαϊνή είσοδος",
-        "Χωρίς σκαλοπάτι, αλλά κλειδωμένη",
-        "Ο Άρης φτάνει μέχρι την πόρτα. Για να μπει, πρέπει να έρθει κάποιος να την ανοίξει.",
-        "Περιμένει έξω"
+        "Το σχολείο βάζει την πλαϊνή πόρτα στο καθημερινό άνοιγμα των εισόδων",
+        "Η πλαϊνή πόρτα ανοίγει τις ίδιες ώρες με την κεντρική, με την επίβλεψη που έχει ορίσει το σχολείο. Ο Άρης μπαίνει χωρίς να ψάχνει ποιος έχει το κλειδί."
       ]
     ],
-    "compare": "Πείτε στην ομάδα σας τι σταματά τον Άρη σε καθεμία από τις δύο εισόδους."
+    "discuss": "Ποια λύση βοηθά σήμερα το πρωί; Τι θα ζητούσατε από τη διεύθυνση για τις επόμενες μέρες;"
   },
   {
-    "title": "Πώς ανοίγει η πόρτα;",
-    "question": "Δοκιμάστε δύο τρόπους να ανοίγει η πλαϊνή πόρτα την ώρα που φτάνουν οι μαθητές.",
+    "title": "Φτάνει μετά το κουδούνι",
+    "situation": "Ο Άρης έχει ραντεβού και φτάνει στη δεύτερη ώρα. Τότε οι πύλες είναι κλειστές. Το κουδούνι που ακούγεται στο γραφείο βρίσκεται στην κεντρική πύλη, πάνω από τα σκαλιά. Στην πλαϊνή πόρτα υπάρχει μόνο το τηλέφωνο του σχολείου γραμμένο σε χαρτί.",
     "options": [
       [
-        "Η πόρτα ανοίγει με κουδούνι",
-        "Κουδούνι ψηλά, πίσω από γλάστρα",
-        "Η γλάστρα εμποδίζει τον Άρη να πλησιάσει και το κουδούνι είναι πολύ ψηλά για να το πατήσει από το αμαξίδιο.",
-        "Δεν φτάνει το κουδούνι"
+        "Κρατάμε το τηλέφωνο ως τρόπο να ειδοποιεί το γραφείο",
+        "Ο Άρης μπορεί να καλέσει αν έχει κινητό και απαντήσει κάποιος. Είναι μια λύση για σήμερα, αλλά εξαρτάται από το τηλέφωνο και από το ποιος βρίσκεται στο γραφείο."
       ],
       [
-        "Ο εφημερεύων ανοίγει και τις δύο εισόδους",
-        "Και οι δύο πόρτες ανοίγουν την ίδια ώρα",
-        "Ο Άρης μπορεί να περάσει από την πλαϊνή πόρτα την ίδια ώρα με τους άλλους. Για να φτάσει στην πόρτα, χρειάζεται να είναι ελεύθερο και το πέρασμα.",
-        "Μπαίνει μαζί με την τάξη"
+        "Ζητάμε κουδούνι που να μπορεί να χρησιμοποιήσει στην πλαϊνή πόρτα",
+        "Θα υπάρχει τρόπος να ειδοποιεί το γραφείο από την είσοδο που χρησιμοποιεί. Μέχρι να τοποθετηθεί, χρειάζεται να συμφωνηθεί τι κάνει όταν φτάνει μετά το κουδούνι."
       ]
     ],
-    "compare": "Σε ποια περίπτωση μπαίνει ο Άρης την ίδια ώρα με την τάξη του; Τι πρέπει να έχει γίνει πριν φτάσει;"
+    "discuss": "Τι θα του λέγατε να κάνει σήμερα αν δεν απαντήσει κανείς; Ποια μόνιμη αλλαγή θα προτείνατε και σε ποιον;"
   },
   {
-    "title": "Πού μπαίνει η πινακίδα;",
-    "question": "Κάποιος έρχεται πρώτη φορά στο σχολείο. Πού θα δει την οδηγία για την πλαϊνή πόρτα;",
+    "title": "Η ράμπα είναι ανοιχτή, το πέρασμα όχι",
+    "situation": "Στο σχόλασμα ένας κάδος έχει μετακινηθεί μπροστά στη ράμπα για την καθαριότητα. Υπάρχει ελεύθερος χώρος στην αυλή, δίπλα στην αποθήκη. Ο Άρης θέλει να βγει την ίδια ώρα με τους άλλους.",
     "options": [
       [
-        "Πάνω στην πλαϊνή πόρτα",
-        "Η πινακίδα φαίνεται όταν φτάσεις εκεί",
-        "Όποιος σταματήσει στην κεντρική πύλη δεν βλέπει προς τα πού να πάει.",
-        "Η οδηγία έρχεται αργά"
+        "Ζητάμε να μετακινηθεί ο κάδος όταν χρειάζεται να περάσει κάποιος",
+        "Το πέρασμα ανοίγει τώρα. Αύριο μπορεί να συμβεί το ίδιο και κάποιος θα πρέπει πάλι να ζητήσει να φύγει ο κάδος."
       ],
       [
-        "Στον δρόμο, πριν από την κεντρική πύλη",
-        "Βέλος προς την πλαϊνή πόρτα",
-        "Όποιος έρχεται από τον δρόμο μπορεί να δει το βέλος και να πάει κατευθείαν στην πλαϊνή πόρτα.",
-        "Βρίσκει τη διαδρομή από την αρχή"
+        "Ζητάμε να μετακινηθεί τώρα και να συμφωνηθεί μόνιμη θέση έξω από το πέρασμα",
+        "Ο κάδος παραμένει κοντά στην αποθήκη για την καθαριότητα. Η ράμπα μπορεί να χρησιμοποιείται όλη τη μέρα."
       ]
     ],
-    "compare": "Διαλέξτε μία θέση για την πινακίδα. Γιατί θα τη δει εγκαίρως κάποιος που έρχεται πρώτη φορά;"
-  },
-  {
-    "title": "Πριν ανοίξουν οι πόρτες",
-    "question": "Στις 9:00 παρουσιάζει η ομάδα του Άρη. Η κεντρική πύλη έχει σκαλοπάτι. Η πλαϊνή δεν έχει, αλλά είναι κλειδωμένη. Η τάξη φτάνει σε πέντε λεπτά. Είστε η ομάδα που υποδέχεται τους μαθητές.",
-    "voices": [
-      "Άρης: «Θέλω να μπω μαζί με την ομάδα μου. Έχουμε να κάνουμε μια τελευταία πρόβα».",
-      "Εφημερεύουσα: «Έχω το κλειδί, αλλά στην κεντρική πύλη πρέπει να μείνει ένας εκπαιδευτικός».",
-      "Μαρία: «Η κυρία Ελένη είναι στην αυλή και μπορεί να βοηθήσει αν την ειδοποιήσουμε τώρα»."
-    ],
-    "options": [
-      [
-        "Περιμένουμε να έρθει ο Άρης για να ζητήσουμε το κλειδί",
-        "Η τάξη μπαίνει από την κεντρική πύλη",
-        "Ο Άρης περιμένει έξω όσο βρίσκετε ποιος μπορεί να ανοίξει. Η πρόβα αρχίζει χωρίς εκείνον.",
-        "Ο Άρης χάνει την αρχή της πρόβας"
-      ],
-      [
-        "Ζητάμε από την κυρία Ελένη να ανοίξει και να μείνει στην πλαϊνή πόρτα",
-        "Η άλλη εκπαιδευτικός παίρνει το κλειδί πριν φτάσει η τάξη",
-        "Οι δύο είσοδοι ανοίγουν μαζί και καθεμία έχει εκπαιδευτικό.",
-        "Ο Άρης μπαίνει στην ώρα του"
-      ],
-      [
-        "Μεταφέρουμε την πρόβα στο πεζοδρόμιο",
-        "Η ομάδα του Άρη μένει έξω για να κάνει πρόβα μαζί του",
-        "Κάνουν πρόβα όλοι, αλλά μετά πρέπει πάλι να βρουν τρόπο να μπουν. Οι υπόλοιποι μαθητές έχουν ήδη πάει στην αίθουσα.",
-        "Η ομάδα κάνει πρόβα, αλλά το πρόβλημα της εισόδου μένει"
-      ]
-    ],
-    "compare": "Ποια λύση δίνει στον Άρη χρόνο για πρόβα και αφήνει και τις δύο εισόδους με επίβλεψη; Τι κοστίζει σε χρόνο η άλλη επιλογή που δοκιμάσατε;"
-  },
-  {
-    "title": "Ποιος βρίσκει την πλαϊνή είσοδο;",
-    "lead": [
-      "Όσο ο Άρης περιμένει να βρεθεί το κλειδί, εμφανίζονται κι άλλοι μαθητές.",
-      "Η πόρτα ανοίγει έγκαιρα. Εσείς είστε ακόμη στην κεντρική είσοδο.",
-      "Μόλις τελειώνει η πρόβα στο πεζοδρόμιο, η κυρία Ελένη ανοίγει την πλαϊνή πόρτα."
-    ],
-    "question": "Έρχεται μια μαθήτρια από άλλο σχολείο που δυσκολεύεται με τα σκαλοπάτια. Έχει το έντυπο της εκδήλωσης, στο οποίο αναφέρεται μόνο η κεντρική είσοδος. Θέλετε η οδηγία σας να βοηθήσει και τον επόμενο που θα έρθει.",
-    "voices": [
-      "Μαθήτρια: «Πού πρέπει να πάω; Δεν βλέπω άλλη πόρτα από εδώ».",
-      "Μαρία: «Έχουμε ένα χαρτόνι και έναν μαρκαδόρο».",
-      "Εφημερεύουσα: «Η πλαϊνή πόρτα είναι μετά τη γωνία, προς τα δεξιά»."
-    ],
-    "options": [
-      [
-        "Δείχνουμε στη μαθήτρια τον δρόμο",
-        "Η Μαρία τη συνοδεύει γύρω από τη γωνία",
-        "Η μαθήτρια μπαίνει. Ο επόμενος που έρχεται δεν έχει τρόπο να βρει τη διαδρομή αν δεν πετύχει τη Μαρία.",
-        "Μία μαθήτρια βρίσκει τον δρόμο"
-      ],
-      [
-        "Γράφουμε «Είσοδος» και το βάζουμε στην πλαϊνή πόρτα",
-        "Το χαρτόνι φαίνεται όταν κάποιος φτάσει στην πόρτα",
-        "Η μαθήτρια δεν ξέρει ακόμη προς τα πού να πάει από την κεντρική πύλη.",
-        "Η οδηγία βρίσκεται στο λάθος σημείο"
-      ],
-      [
-        "Βάζουμε βέλος και σαφή οδηγία στην κεντρική πύλη",
-        "Το χαρτόνι γράφει «Είσοδος χωρίς σκαλοπάτι → μετά τη γωνία»",
-        "Η μαθήτρια και όσοι έρχονται μετά ξέρουν προς τα πού να πάνε.",
-        "Η οδηγία βοηθά και τον επόμενο"
-      ]
-    ],
-    "compare": "Πείτε την οδηγία όπως θα τη διαβάζει κάποιος που φτάνει πρώτη φορά. Σε ποιο σημείο τη χρειάζεται;"
-  },
-  {
-    "title": "Στη μέση του περάσματος",
-    "lead": [
-      "Η Μαρία έφερε τη μαθήτρια στην πόρτα και πρέπει να επιστρέψει στην πύλη.",
-      "Η μαθήτρια τελικά ρωτά και βρίσκει την πόρτα. Έχει ήδη αργήσει.",
-      "Η μαθήτρια ακολούθησε το βέλος και έφτασε στην πλαϊνή πόρτα χωρίς να ρωτήσει."
-    ],
-    "question": "Η πόρτα είναι ανοιχτή, αλλά ένα τρόλεϊ με τις κούτες της εκδήλωσης κλείνει το πέρασμα. Οι κούτες χρειάζονται σε λίγο στην αίθουσα και κάποιος πρέπει να μείνει στην είσοδο για τους τελευταίους επισκέπτες.",
-    "voices": [
-      "Άρης: «Από εδώ μπορώ να μπω, αν φύγει το τρόλεϊ από τη μέση».",
-      "Μαρία: «Μπορώ να πάω τις κούτες κατευθείαν στην αίθουσα».",
-      "Εφημερεύουσα: «Εγώ μένω στην πόρτα. Πείτε μου ποιος θα αναλάβει τις κούτες»."
-    ],
-    "options": [
-      [
-        "Αφήνουμε το τρόλεϊ εκεί μέχρι να το χρειαστούν",
-        "Η είσοδος παραμένει ανοιχτή και με επίβλεψη",
-        "Ο Άρης δεν μπορεί να περάσει ώσπου να φύγουν τα υλικά.",
-        "Η ανοιχτή πόρτα δεν αρκεί"
-      ],
-      [
-        "Μεταφέρουμε τις κούτες μπροστά στην πόρτα της αίθουσας",
-        "Το πέρασμα στην είσοδο ελευθερώνεται",
-        "Ο Άρης μπαίνει στην αυλή, αλλά οι κούτες τού κλείνουν τώρα τον δρόμο στην αίθουσα.",
-        "Το εμπόδιο μεταφέρεται παρακάτω"
-      ],
-      [
-        "Η Μαρία πάει τις κούτες σε ένα άδειο τραπέζι μέσα στην αίθουσα",
-        "Η εφημερεύουσα μένει στην πόρτα και τα υλικά πηγαίνουν εκεί που χρειάζονται",
-        "Η διαδρομή μένει ελεύθερη και η εκδήλωση έχει τα υλικά της.",
-        "Ο Άρης φτάνει μαζί με την ομάδα του"
-      ]
-    ],
-    "compare": "Πείτε τι χρειάζεται να έχει κανονιστεί πριν φτάσει η επόμενη τάξη. Συμπεριλάβετε την πόρτα, την οδηγία και το πέρασμα."
+    "discuss": "Δώστε μία οδηγία για το άνοιγμα της πόρτας και μία για το πέρασμα. Ποιος στο σχολείο πρέπει να ξέρει την καθεμία;"
   }
 ];
 const group = "Ομάδα 1 · Είσοδος";
 const byId = (id) => document.getElementById(id);
-const practiceCount = 3;
-const opened = stops.map(() => new Set());
-const decisions = stops.map(() => null);
-const selected = stops.map(() => null);
-const reasons = stops.map(() => "");
-const letters = ["Α", "Β", "Γ"];
+const opened = cases.map(() => new Set());
 let active = 0;
 
-function updateInstruction() {
-  const firstUnopened = stops[active].options.findIndex((_, index) => !opened[active].has(index));
-  const isGame = active >= practiceCount;
-  const complete = isGame ? opened[active].size >= 2 : firstUnopened === -1;
-  byId("instruction").textContent = isGame
-    ? (complete
-        ? "Συζητήστε την ερώτηση από κάτω. Πατήστε ξανά την επιλογή που θέλετε να κρατήσετε και γράψτε γιατί."
-        : "Πείτε ο καθένας τι θα έκανε και γιατί. Ψηφίστε, δείτε το αποτέλεσμα και δοκιμάστε τουλάχιστον μία άλλη επιλογή.")
-    : (complete
-        ? "Διαβάστε ξανά τις απαντήσεις και συζητήστε την ερώτηση από κάτω."
-        : "Πατήστε την επιλογή " + letters[firstUnopened] + ".");
-  byId("compare").hidden = !complete;
-  byId("decision").hidden = !isGame;
-  byId("next").hidden = !complete || (isGame && !reasons[active].trim());
-
-  if (isGame && selected[active] !== null) {
-    const choice = selected[active];
-    byId("chosen").textContent = "Κρατάτε: " + letters[choice] + ". " + stops[active].options[choice][0];
-  }
+function showDiscussion() {
+  const ready = opened[active].size === cases[active].options.length;
+  byId("compare").hidden = !ready;
+  byId("next").hidden = !ready;
 }
 
-function showStep(index) {
+function showCase(index) {
   active = index;
-  const stop = stops[index];
-  byId("progress").textContent = index < practiceCount
-    ? "Δοκιμή " + (index + 1) + " από " + practiceCount
-    : "Τι κάνουμε τώρα; · Επεισόδιο " + (index - practiceCount + 1) + " από " + (stops.length - practiceCount);
-  byId("step-title").textContent = stop.title;
-  byId("lead").hidden = !stop.lead;
-  byId("lead").textContent = stop.lead ? stop.lead[decisions[index - 1]] : "";
-  byId("question").textContent = stop.question;
-  byId("voices-panel").hidden = !stop.voices;
-  byId("voices").replaceChildren();
-  for (const voice of stop.voices ?? []) {
-    const line = document.createElement("li");
-    line.textContent = voice;
-    byId("voices").append(line);
-  }
-  byId("reason").value = reasons[index];
-  byId("comparison").textContent = stop.compare;
+  const current = cases[index];
+  byId("progress").textContent = "Περίπτωση " + (index + 1) + " από " + cases.length;
+  byId("step-title").textContent = current.title;
+  byId("question").textContent = current.situation;
+  byId("comparison").textContent = current.discuss;
   byId("back").hidden = index === 0;
-  const nextLabels = ["Ξεκινήστε το παιχνίδι", "Κρατήστε την απόφαση και συνεχίστε", "Κρατήστε την απόφαση και συνεχίστε", "Δείτε τις αποφάσεις σας"];
-  byId("next").textContent = nextLabels[index - practiceCount + 1] ?? "Επόμενο βήμα";
+  byId("next").textContent = index === cases.length - 1 ? "Γράψτε την πρότασή σας" : "Επόμενη περίπτωση";
   byId("options").replaceChildren();
 
-  stop.options.forEach(([label, condition, explanation, outcome], optionIndex) => {
+  current.options.forEach(([label, outcome], optionIndex) => {
     const item = document.createElement("div");
     const button = document.createElement("button");
-    const feedback = document.createElement("div");
+    const result = document.createElement("p");
     button.type = "button";
     button.className = "option";
-    button.textContent = letters[optionIndex] + ". " + label;
-    feedback.id = "result-" + optionIndex;
-    feedback.className = "feedback";
-    feedback.setAttribute("role", "status");
-    button.setAttribute("aria-controls", feedback.id);
+    button.textContent = (optionIndex === 0 ? "Α. " : "Β. ") + label;
+    result.id = "result-" + optionIndex;
+    result.className = "feedback";
+    result.setAttribute("role", "status");
+    button.setAttribute("aria-controls", result.id);
 
     function reveal() {
       button.setAttribute("aria-expanded", "true");
-      const summary = document.createElement("strong");
-      summary.textContent = outcome;
-      const detail = document.createElement("p");
-      detail.textContent = condition + ". " + explanation;
-      feedback.replaceChildren(summary, detail);
+      result.textContent = outcome;
     }
 
     button.setAttribute("aria-expanded", "false");
     if (opened[index].has(optionIndex)) reveal();
-    if (stop.voices && selected[index] === optionIndex) button.setAttribute("aria-current", "true");
     button.addEventListener("click", () => {
-      if (!opened[index].has(optionIndex)) {
-        opened[index].add(optionIndex);
-        reveal();
-      }
-      if (stop.voices && selected[index] !== optionIndex) {
-        byId("options").querySelector('[aria-current="true"]')?.removeAttribute("aria-current");
-        selected[index] = optionIndex;
-        button.setAttribute("aria-current", "true");
-        reasons[index] = "";
-        byId("reason").value = "";
-      }
-      updateInstruction();
+      opened[index].add(optionIndex);
+      reveal();
+      showDiscussion();
     });
-    item.append(button, feedback);
+    item.append(button, result);
     byId("options").append(item);
   });
-  updateInstruction();
+  showDiscussion();
 }
 
-function goToStep(index) {
-  showStep(index);
+function goToCase(index) {
+  showCase(index);
   byId("step-title").focus();
 }
+
 byId("back").addEventListener("click", () => {
   byId("record").hidden = true;
-  goToStep(active - 1);
-});
-byId("reason").addEventListener("input", (event) => {
-  reasons[active] = event.target.value;
-  byId("next").hidden = !reasons[active].trim();
+  goToCase(active - 1);
 });
 byId("next").addEventListener("click", () => {
-  if (active >= practiceCount && decisions[active] !== selected[active]) {
-    decisions[active] = selected[active];
-    for (let index = active + 1; index < stops.length; index++) {
-      opened[index].clear();
-      decisions[index] = null;
-      selected[index] = null;
-      reasons[index] = "";
-    }
-    form.reset();
-    fields.forEach((field) => field.setCustomValidity(""));
-  }
-  output.hidden = true;
-  copyStatus.textContent = "";
-  if (active < stops.length - 1) {
-    goToStep(active + 1);
+  if (active < cases.length - 1) {
+    goToCase(active + 1);
     return;
-  }
-  byId("recap").replaceChildren();
-  for (const line of recap()) {
-    const item = document.createElement("li");
-    item.textContent = line;
-    byId("recap").append(item);
   }
   byId("record").hidden = false;
   byId("record-title").focus();
 });
-showStep(0);
-
-function recap() {
-  return stops.slice(practiceCount).map((stop, index) => {
-    const step = index + practiceCount;
-    return stop.title + ": " + stop.options[decisions[step]][0] + " · " + reasons[step].trim();
-  });
-}
+showCase(0);
 
 const form = byId("finding-form");
 const fields = ["spot", "barrier", "change", "check"].map(byId);
@@ -457,8 +255,8 @@ form.addEventListener("submit", (event) => {
   }
   const [spot, barrier, change, check] = fields.map((field) => field.value.trim());
   report.value = [
-    group, ...recap(), "", "Επεισόδιο που διαλέξαμε: " + spot, "Εμπόδιο: " + barrier,
-    "Απόφαση: " + change, "Τι αλλάζει: " + check
+    group, "Περίπτωση: " + spot, "Εμπόδιο: " + barrier,
+    "Σήμερα: " + change, "Για τις επόμενες μέρες: " + check
   ].join("\n");
   output.hidden = false;
   report.focus();

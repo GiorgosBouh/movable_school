@@ -32,13 +32,8 @@
   .plan li { margin-block: .35rem; }
   .activity { border-top: 1px solid var(--line); padding-top: 1.15rem; }
   .options { display: grid; gap: .5rem; margin-block: .8rem; }
-  .option[aria-current="true"] { outline: 3px solid var(--accent); outline-offset: 2px; }
-  .voices { padding-inline-start: 1.35rem; }
-  .voices li { margin-block: .4rem; }
-  .decision label { display: block; font-weight: 700; margin-block: .75rem .25rem; }
   .feedback { border-inline-start: .25rem solid var(--accent); padding: .5rem .8rem; margin: .5rem 0 .9rem; }
   .feedback:empty { padding: 0; border: 0; margin: 0; }
-  .feedback p:last-child { margin-bottom: 0; }
   .compare { margin-top: 1rem; padding: .9rem; background: var(--paper); border-radius: .5rem; }
   .navigation { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .3rem; }
   .navigation .back { background: var(--white); color: var(--accent); }
@@ -60,7 +55,7 @@
     <p class="eyebrow">Ομάδα 3 από 4</p>
     <h1>Το εργαστήριο</h1>
     <h2>Το σενάριο της ομάδας σας</h2>
-    <p>Ο Άρης έφτασε στο εργαστήριο. Η ομάδα του φτιάχνει διαφάνειες και εκείνος έχει αναλάβει να περάσει τις φωτογραφίες στον υπολογιστή. Χρειάζεται να φτάσει στο θρανίο με το αμαξίδιό του, να χειριστεί τον υπολογιστή και να διαλέξει φωτογραφίες μαζί με την ομάδα. Δοκιμάστε πώς θα στήνατε τον χώρο.</p>
+    <p>Στην Πληροφορική η τάξη δουλεύει σε ζευγάρια. Ο Άρης χρησιμοποιεί αμαξίδιο και θέλει να κάνει την ίδια άσκηση στον υπολογιστή με τους συμμαθητές του. Δείτε τι αλλάζει ανάλογα με την αίθουσα, το τραπέζι και τον τρόπο που μοιράζεται η δουλειά.</p>
   </header>
   <noscript><p>Για τις διαδραστικές δοκιμές χρειάζεται ενεργοποιημένη JavaScript.</p></noscript>
   <div class="work">
@@ -68,31 +63,21 @@
       <section class="panel" aria-labelledby="mission-title">
         <h2 id="mission-title">Η αποστολή σας · περίπου 60 λεπτά</h2>
         <ol class="plan">
-          <li><strong>5 λεπτά</strong> · Διαβάστε την ιστορία. Ένας πατά τις επιλογές, ένας κρατά σημειώσεις και ένας προσέχει τον χρόνο.</li>
-          <li><strong>10 λεπτά</strong> · Κάντε τις τρεις σύντομες δοκιμές. Πριν πατήσετε κάθε επιλογή, πείτε τι νομίζετε ότι θα γίνει.</li>
-          <li><strong>30 λεπτά</strong> · Παίξτε τρία επεισόδια, περίπου 10 λεπτά το καθένα. Μοιραστείτε τις ατάκες, συγκρίνετε τουλάχιστον δύο επιλογές και γράψτε γιατί διαλέγετε τη μία. Η απόφασή σας αλλάζει το επόμενο επεισόδιο.</li>
-          <li><strong>10 λεπτά</strong> · Διαβάστε τις τρεις αποφάσεις σας. Διαλέξτε εκείνη που άλλαξε περισσότερο τι μπορούσε να κάνει ο Άρης και συγκρίνετέ τη με μια άλλη λύση.</li>
-          <li><strong>5 λεπτά</strong> · Κάντε πρόβα για να πείτε το εύρημά σας στην τάξη σε ένα λεπτό.</li>
+          <li><strong>5 λεπτά</strong> · Διαβάστε την εισαγωγή. Μοιράστε ποιος διαβάζει, ποιος πατά τα κουμπιά και ποιος κρατά σημειώσεις. Αλλάξτε ρόλους σε κάθε περίπτωση.</li>
+          <li><strong>30 λεπτά</strong> · Δουλέψτε τις τρεις περιπτώσεις, περίπου 10 λεπτά την καθεμία. Πείτε πρώτα τι θα κάνατε. Ανοίξτε και τις δύο επιλογές και κρατήστε μία σύντομη σημείωση από τη συζήτησή σας.</li>
+          <li><strong>15 λεπτά</strong> · Διαλέξτε μία περίπτωση. Συμφωνήστε τι θα κάνατε σήμερα και τι θα ζητούσατε να αλλάξει για τις επόμενες μέρες. Γράψτε την πρότασή σας.</li>
+          <li><strong>10 λεπτά</strong> · Ανταλλάξτε προτάσεις με άλλη ομάδα. Ρωτήστε ποιος θα κάνει την αλλαγή και τι μένει άλυτο. Βελτιώστε μία πρόταση με βάση την απάντησή τους.</li>
         </ol>
         <div class="activity">
           <p class="eyebrow" id="progress"></p>
           <h3 id="step-title" tabindex="-1"></h3>
-          <p id="lead" hidden></p>
           <p id="question"></p>
-          <div id="voices-panel" hidden>
-            <h4>Μοιραστείτε τις ατάκες και διαβάστε τες δυνατά</h4>
-            <ul id="voices" class="voices"></ul>
-          </div>
-          <p id="instruction" class="muted" role="status"></p>
+          <p>Πείτε τι θα κάνατε και μετά πατήστε Α και Β για να δείτε τι αλλάζει.</p>
           <div class="options" id="options" role="group" aria-labelledby="step-title"></div>
           <div id="compare" class="compare" hidden>
-            <h3>Συζητήστε στην ομάδα</h3>
+            <h3>Συζητήστε πριν προχωρήσετε</h3>
             <p id="comparison"></p>
-            <div id="decision" class="decision" hidden>
-              <p id="chosen"></p>
-              <label for="reason">Γιατί κρατάτε αυτή την επιλογή;</label>
-              <textarea id="reason" rows="2" maxlength="350" placeholder="Πείτε τι κερδίζει ο Άρης και τι θα γινόταν με μια άλλη επιλογή."></textarea>
-            </div>
+            <p>Συμφωνήστε τι θα κάνατε και κρατήστε μία πρόταση για το τέλος.</p>
           </div>
           <div class="navigation">
             <button class="action back" id="back" type="button" hidden>Προηγούμενο βήμα</button>
@@ -102,19 +87,17 @@
       </section>
     </div>
     <section class="panel" id="record" aria-labelledby="record-title" hidden>
-      <h2 id="record-title" tabindex="-1">Γράψτε την απάντησή σας · 10 λεπτά</h2>
-      <h3>Οι τρεις αποφάσεις σας</h3>
-      <ol id="recap"></ol>
-      <p>Διαλέξτε την απόφαση που άλλαξε περισσότερο τι μπορούσε να κάνει ο Άρης. Συγκρίνετέ τη με μία άλλη επιλογή που δοκιμάσατε στο ίδιο επεισόδιο.</p>
+      <h2 id="record-title" tabindex="-1">Γράψτε την πρότασή σας · 15 λεπτά</h2>
+      <p>Διαλέξτε μία από τις τρεις περιπτώσεις. Μπορείτε να συνδυάσετε τις επιλογές ή να προτείνετε δική σας λύση.</p>
       <form id="finding-form">
-        <label for="spot">Σε ποιο επεισόδιο;</label>
-        <input id="spot" maxlength="160" required placeholder="Γράψτε τον τίτλο ή τον αριθμό του επεισοδίου.">
-        <label for="barrier">Ποιο είναι το εμπόδιο;</label>
-        <textarea id="barrier" rows="2" maxlength="350" required placeholder="Τι θέλει να κάνει ο Άρης και τι τον δυσκολεύει;"></textarea>
-        <label for="change">Τι αποφασίσατε;</label>
-        <textarea id="change" rows="2" maxlength="350" required placeholder="Γράψτε ποια επιλογή στηρίζετε."></textarea>
-        <label for="check">Τι αλλάζει σε σχέση με την άλλη επιλογή;</label>
-        <textarea id="check" rows="2" maxlength="350" required placeholder="Πείτε τι θα μπορούσε να κάνει ο Άρης με καθεμία από τις δύο επιλογές."></textarea>
+        <label for="spot">Ποια περίπτωση διαλέξατε;</label>
+        <input id="spot" maxlength="160" required placeholder="Γράψτε τον τίτλο ή τον αριθμό της.">
+        <label for="barrier">Τι δυσκολεύει τον Άρη;</label>
+        <textarea id="barrier" rows="2" maxlength="350" required placeholder="Πείτε τι προσπαθεί να κάνει και τι τον εμποδίζει."></textarea>
+        <label for="change">Τι θα κάνατε σήμερα;</label>
+        <textarea id="change" rows="2" maxlength="350" required placeholder="Γράψτε μία ενέργεια και ποιος θα την κάνει."></textarea>
+        <label for="check">Τι πρέπει να αλλάξει για τις επόμενες μέρες;</label>
+        <textarea id="check" rows="2" maxlength="350" required placeholder="Ποιος μπορεί να το αναλάβει; Πώς βοηθά η αλλαγή τον Άρη;"></textarea>
         <button class="action" type="submit">Ετοιμάστε την απάντησή σας</button>
       </form>
       <div id="finding-output" hidden>
@@ -122,319 +105,134 @@
         <textarea id="report" rows="7" readonly></textarea>
         <button class="action" type="button" id="copy">Αντιγραφή ευρήματος</button>
         <p id="copy-status" role="status"></p>
-        <h3>Ετοιμάστε τι θα πείτε · 5 λεπτά</h3>
-        <p>Διαλέξτε ποιος θα μιλήσει. Κάντε μια πρόβα ενός λεπτού. Πείτε στην τάξη τι συνέβη στο επεισόδιο που διαλέξατε, ποια απόφαση πήρατε και τι μπόρεσε να κάνει ο Άρης χάρη σε αυτήν.</p>
+      </div>
+      <div class="compare">
+        <h3>Ανταλλάξτε προτάσεις · 10 λεπτά</h3>
+        <p>Διαβάστε την πρότασή σας σε μια άλλη ομάδα και ακούστε τη δική της. Ρωτήστε ο ένας τον άλλον «Ποιος το αναλαμβάνει;» και «Τι μένει άλυτο;». Αλλάξτε κάτι στην απάντησή σας και πατήστε ξανά «Ετοιμάστε την απάντησή σας».</p>
       </div>
     </section>
   </div>
 </main>
-<footer>Η ιστορία του Άρη διαδραματίζεται σε ένα φανταστικό σχολείο.</footer>
+<footer><p>Οι ιστορίες είναι γραμμένες για το μάθημα και βασίζονται σε εμπόδια που έχουν καταγραφεί σε σχολεία.</p>
+  <p><a href="https://www.tovima.gr/wp-content/uploads/2026/03/31/3-GEL_Rafinas_EKTOS_YLIS.pdf">Μαθητικό ρεπορτάζ για την πρόσβαση στα εργαστήρια του ΓΕΛ Πικερμίου, σελ. 8 του εντύπου</a></p></footer>
 <script>
-const stops = [
+const cases = [
   {
-    "title": "Από την πόρτα στο θρανίο",
-    "question": "Δοκιμάστε δύο διατάξεις. Μπορεί ο Άρης να φτάσει μέχρι τον υπολογιστή;",
+    "title": "Πληροφορική στον όροφο",
+    "situation": "Το εργαστήριο είναι στον πρώτο όροφο και το κτίριο δεν έχει ασανσέρ. Η σημερινή άσκηση γίνεται σε μια ιστοσελίδα. Υπάρχει ελεύθερη αίθουσα στο ισόγειο και αρκετοί φορητοί υπολογιστές για εργασία σε ζευγάρια.",
     "options": [
       [
-        "Θρανία σε σειρές, τσάντες στο πέρασμα",
-        "Οι τσάντες κλείνουν τον διάδρομο",
-        "Ο υπολογιστής είναι ελεύθερος, αλλά ο Άρης σταματά πριν φτάσει στο θρανίο.",
-        "Η διαδρομή κλείνει"
+        "Στέλνουμε την άσκηση στον Άρη να την κάνει στο ισόγειο",
+        "Ο Άρης μπορεί να ανοίξει την άσκηση, αλλά δουλεύει χωριστά και δεν έχει δίπλα του ούτε το ζευγάρι του ούτε τον καθηγητή."
       ],
       [
-        "Ελεύθερο πέρασμα δίπλα στα θρανία",
-        "Οι τσάντες είναι έξω από το πέρασμα",
-        "Ο Άρης φτάνει στο θρανίο. Τώρα δείτε αν μπορεί να πλησιάσει αρκετά για να χρησιμοποιήσει τον υπολογιστή.",
-        "Φτάνει στο θρανίο"
+        "Ο καθηγητής κάνει το σημερινό μάθημα με όλο το τμήμα στο ισόγειο",
+        "Όλοι κάνουν την ίδια άσκηση σε ζευγάρια. Για μελλοντικά μαθήματα που χρειάζονται εξοπλισμό του εργαστηρίου θα πρέπει να βρεθεί άλλη λύση."
       ]
     ],
-    "compare": "Ποια αλλαγή βοηθά τον Άρη να φτάσει στο θρανίο; Πού θα βάζατε τις τσάντες;"
+    "discuss": "Γιατί λειτουργεί η μεταφορά για τη συγκεκριμένη άσκηση; Τι αλλάζει αν το επόμενο μάθημα χρειάζεται πρόγραμμα που υπάρχει μόνο στους σταθερούς υπολογιστές;"
   },
   {
-    "title": "Στον υπολογιστή",
-    "question": "Ο Άρης έφτασε στο θρανίο. Μπορεί να φτάσει το πληκτρολόγιο και το ποντίκι;",
+    "title": "Χώρος κάτω από το τραπέζι",
+    "situation": "Ο Άρης έφτασε στον υπολογιστή του ζευγαριού του. Κάτω από το τραπέζι έχει αποθηκευτεί ένα κουτί με παλιά καλώδια. Στην άλλη άκρη της σειράς υπάρχει ένα άδειο τραπέζι με χώρο από κάτω.",
     "options": [
       [
-        "Κουτί από κάτω, πληκτρολόγιο στο βάθος",
-        "Το αμαξίδιο μένει μακριά από το θρανίο",
-        "Το κουτί πιάνει τον χώρο κάτω από το θρανίο. Από εκεί που σταματά ο Άρης δεν φτάνει άνετα το πληκτρολόγιο και το ποντίκι.",
-        "Φτάνει στο θρανίο, αλλά δυσκολεύεται να το χρησιμοποιήσει"
+        "Ο καθηγητής μετακινεί το κουτί στην αποθήκη πριν αρχίσει η άσκηση",
+        "Ελευθερώνεται ο χώρος κάτω από το τραπέζι και το ζευγάρι μένει μαζί. Τα καλώδια έχουν πια θέση έξω από τον χώρο εργασίας."
       ],
       [
-        "Χώρος από κάτω, πληκτρολόγιο μπροστά",
-        "Ο Άρης πλησιάζει και φτάνει τα χειριστήρια",
-        "Ο Άρης μπορεί να χειριστεί τον υπολογιστή στο παράδειγμα. Στον πραγματικό χώρο, ρωτήστε τον μαθητή τι θέση τον βολεύει.",
-        "Μπορεί να περάσει τις φωτογραφίες"
+        "Μεταφέρουμε το ζευγάρι στο άδειο τραπέζι",
+        "Το ζευγάρι μπορεί να δουλέψει εκεί αν μεταφερθεί και ο φορητός. Η αρχική θέση παραμένει κλεισμένη για το επόμενο τμήμα."
       ]
     ],
-    "compare": "Πείτε τι πρέπει να αλλάξει κάτω και πάνω στο θρανίο για να μπορεί ο Άρης να δουλέψει."
+    "discuss": "Ποια λύση είναι πιο εύκολη σήμερα; Ποια αποτρέπει να ξαναβρεθεί κουτί κάτω από το ίδιο τραπέζι;"
   },
   {
-    "title": "Δίπλα στην ομάδα",
-    "question": "Πού θα βάλετε τον υπολογιστή για να διαλέξουν όλοι μαζί τις φωτογραφίες;",
+    "title": "Ποιος κάνει τι στην άσκηση;",
+    "situation": "Η άσκηση έχει δύο μέρη: πρώτα βρίσκουν τις πληροφορίες και μετά τις περνούν σε πίνακα. Ο συμμαθητής του Άρη έχει ήδη ανοίξει το αρχείο. Ο Άρης ζητά να χειριστεί ο ίδιος τον υπολογιστή στο δεύτερο μέρος.",
     "options": [
       [
-        "Σε ξεχωριστό θρανίο στην άκρη",
-        "Ο υπολογιστής είναι μακριά από την ομάδα",
-        "Ο Άρης μπορεί να περάσει τις φωτογραφίες, αλλά οι υπόλοιποι δεν βλέπουν την οθόνη από το τραπέζι τους.",
-        "Η ομάδα δουλεύει χωριστά"
+        "Ο συμμαθητής συνεχίζει και ο Άρης του υπαγορεύει",
+        "Ο Άρης συμβάλλει στο περιεχόμενο, αλλά δεν εξασκείται στην καταχώριση που ζήτησε να κάνει."
       ],
       [
-        "Στο τραπέζι της ομάδας",
-        "Ο Άρης έχει θέση δίπλα στους συμμαθητές του",
-        "Η ομάδα βλέπει την ίδια οθόνη και διαλέγει μαζί τις φωτογραφίες. Αν κάποια καρέκλα κλείσει το πέρασμα, ο Άρης θα δυσκολευτεί να πλησιάσει.",
-        "Η ομάδα δουλεύει μαζί"
+        "Αλλάζουν ρόλους στο δεύτερο μέρος",
+        "Ο Άρης χειρίζεται τον υπολογιστή και ο συμμαθητής ελέγχει τις πληροφορίες. Και οι δύο κάνουν μέρος της άσκησης."
       ]
     ],
-    "compare": "Πού θα βάλετε τον υπολογιστή για να μπορούν όλοι να βλέπουν και να διαλέγουν φωτογραφίες μαζί;"
-  },
-  {
-    "title": "Πέντε λεπτά μέχρι να στείλετε τις διαφάνειες",
-    "question": "Ο Άρης έχει αναλάβει να βάλει τις φωτογραφίες στις διαφάνειες. Μόλις κάθισε, βλέπει ότι το ποντίκι είναι μακριά και το καλώδιο δεν φτάνει αν το τραβήξει προς το μέρος του. Η ομάδα έχει πέντε λεπτά πριν στείλει το αρχείο.",
-    "voices": [
-      "Άρης: «Θέλω να τις βάλω εγώ. Αν μου φέρετε το ποντίκι από αριστερά, το φτάνω».",
-      "Πέτρος: «Να το κάνω εγώ; Σε ένα λεπτό θα το έχω έτοιμο».",
-      "Ειρήνη: «Μπορούμε να περάσουμε το καλώδιο από την άλλη πλευρά του υπολογιστή»."
-    ],
-    "options": [
-      [
-        "Ο Πέτρος περνά τις φωτογραφίες μόνος του",
-        "Ο Πέτρος παίρνει το ποντίκι και η δουλειά προχωρά γρήγορα",
-        "Ο Άρης είχε ζητήσει να κάνει τη δουλειά ο ίδιος και μένει χωρίς τον ρόλο του.",
-        "Η ομάδα κερδίζει χρόνο, ο Άρης χάνει τη δουλειά του"
-      ],
-      [
-        "Περνάμε το καλώδιο από αριστερά, όπως ζήτησε ο Άρης",
-        "Το ποντίκι φτάνει εκεί που τον βολεύει",
-        "Ο Άρης περνά τις φωτογραφίες, ενώ οι άλλοι διαβάζουν τους τίτλους για να προλάβουν.",
-        "Ο Άρης κάνει τη δουλειά του και η ομάδα μοιράζεται τον χρόνο"
-      ],
-      [
-        "Φέρνουμε το ποντίκι μπροστά, στη μέση του θρανίου",
-        "Το ποντίκι έρχεται λίγο πιο κοντά",
-        "Ο Άρης εξακολουθεί να δυσκολεύεται, γιατί είχε ζητήσει να βρίσκεται αριστερά.",
-        "Η βοήθεια δεν ταιριάζει σε αυτό που ζήτησε"
-      ]
-    ],
-    "compare": "Πότε η βοήθεια δίνει στον Άρη τη δυνατότητα να κάνει τη δουλειά του; Πότε του παίρνει τη δουλειά από τα χέρια;"
-  },
-  {
-    "title": "Ποια φωτογραφία μπαίνει τελευταία;",
-    "lead": [
-      "Ο Πέτρος έχει περάσει τις φωτογραφίες. Ο Άρης ζητά να πάρει μέρος στην τελευταία επιλογή.",
-      "Ο Άρης πέρασε τις φωτογραφίες και έχει ακόμη το ποντίκι.",
-      "Η Ειρήνη τελικά φέρνει το ποντίκι αριστερά. Έχετε λίγο λιγότερο χρόνο από πριν."
-    ],
-    "question": "Υπάρχουν τρεις φωτογραφίες για την τελευταία διαφάνεια και χωράει μία. Ο Άρης και ο Πέτρος βλέπουν την οθόνη. Η Ειρήνη και η Μαρία κάθονται σε άλλο τραπέζι και δεν βλέπουν τις φωτογραφίες.",
-    "voices": [
-      "Ειρήνη: «Δεν μπορώ να πω ποια είναι καλύτερη αν δεν τις δω».",
-      "Άρης: «Μπορώ να τις ανοίξω μία μία και να διαλέξουμε όλοι».",
-      "Μαρία: «Αν τραβήξω την καρέκλα δίπλα σας, να προσέξουμε να μη μείνει μέσα στο πέρασμα»."
-    ],
-    "options": [
-      [
-        "Ψηφίζουν μόνο όσοι βλέπουν την οθόνη",
-        "Δύο μαθητές βλέπουν τις φωτογραφίες και αποφασίζουν",
-        "Η διαφάνεια ετοιμάζεται γρήγορα, αλλά η μισή ομάδα δεν έχει λόγο στην επιλογή.",
-        "Η απόφαση μένει σε δύο άτομα"
-      ],
-      [
-        "Γυρίζουμε την οθόνη και κάνουμε μια σύντομη ψηφοφορία",
-        "Όλοι βλέπουν τις ίδιες φωτογραφίες χωρίς να μετακινηθούν καρέκλες στο πέρασμα",
-        "Ο καθένας λέει ποια φωτογραφία προτιμά και ο Άρης βάζει αυτή που συμφωνεί η ομάδα.",
-        "Όλοι συμμετέχουν στην απόφαση"
-      ],
-      [
-        "Ο Άρης διαλέγει μόνος για να προλάβουν",
-        "Ένα άτομο παίρνει την απόφαση",
-        "Ο Άρης έχει ενεργό ρόλο, αλλά η επιλογή δεν γίνεται μαζί με τους συμμαθητές του.",
-        "Ο χειρισμός του υπολογιστή δεν αρκεί για συνεργασία"
-      ]
-    ],
-    "compare": "Πώς θα ακούσετε τη γνώμη όλων σε λίγο χρόνο; Συμφωνήστε ποιος δείχνει τις φωτογραφίες και πώς ψηφίζετε."
-  },
-  {
-    "title": "Αλλάζει υπολογιστής η επόμενη ομάδα",
-    "lead": [
-      "Η φωτογραφία μπήκε. Δύο συμμαθήτριες λένε ότι θέλουν να συμμετάσχουν περισσότερο την επόμενη φορά.",
-      "Η φωτογραφία επιλέχθηκε μαζί. Όλοι ξέρουν γιατί μπήκε στη διαφάνεια.",
-      "Η φωτογραφία μπήκε γρήγορα. Η ομάδα θέλει πιο δίκαιο τρόπο να διαλέξει την επόμενη φορά."
-    ],
-    "question": "Η επόμενη εργασία θα γίνει σε άλλον υπολογιστή. Ένας συμμαθητής προτείνει να χρησιμοποιείτε πάντα το ίδιο θρανίο για τον Άρη. Η νέα ομάδα έχει παιδιά που θα αναλάβουν διαφορετικές δουλειές.",
-    "voices": [
-      "Άρης: «Θέλω να μπορώ να διαλέξω σε ποια ομάδα θα δουλέψω».",
-      "Πέτρος: «Το παλιό θρανίο μάς βόλεψε, αλλά είναι μακριά από την επόμενη ομάδα».",
-      "Ειρήνη: «Μπορούμε να ετοιμάσουμε και δεύτερο τραπέζι πριν αρχίσει η δουλειά»."
-    ],
-    "options": [
-      [
-        "Ο Άρης μένει πάντα στο ίδιο θρανίο",
-        "Η θέση είναι έτοιμη από την προηγούμενη φορά",
-        "Ο Άρης μπορεί να χρησιμοποιήσει τον υπολογιστή, αλλά πρέπει να δεχτεί και την ομάδα που κάθεται εκεί.",
-        "Η έτοιμη θέση περιορίζει την επιλογή ομάδας"
-      ],
-      [
-        "Ετοιμάζουμε θέση στο τραπέζι της ομάδας που διαλέγει",
-        "Ρωτάμε τον Άρη πώς τον βολεύουν η θέση και το ποντίκι",
-        "Ο Άρης διαλέγει ομάδα και μπορεί να αναλάβει τον χειρισμό ή άλλη δουλειά όπως οι υπόλοιποι.",
-        "Ο Άρης διαλέγει ομάδα και ρόλο"
-      ],
-      [
-        "Περιμένουμε να ξεκινήσει η εργασία για να δούμε τι χρειάζεται",
-        "Η ομάδα κάθεται πρώτα στις θέσεις της",
-        "Χάνουν χρόνο στην αρχή και είναι πιο δύσκολο να αλλάξουν θέση αφού έχουν στηθεί όλα.",
-        "Η δουλειά ξεκινά πριν ετοιμαστεί η θέση"
-      ]
-    ],
-    "compare": "Ποιες δύο συμφωνίες θα κάνετε από πριν; Η μία να αφορά τη χρήση του υπολογιστή και η άλλη το πώς δουλεύει η ομάδα μαζί."
+    "discuss": "Γράψτε πώς θα μοιράζατε τους ρόλους από την αρχή, ώστε και οι δύο να χρησιμοποιήσουν τον υπολογιστή και να συνεισφέρουν."
   }
 ];
 const group = "Ομάδα 3 · Εργαστήριο";
 const byId = (id) => document.getElementById(id);
-const practiceCount = 3;
-const opened = stops.map(() => new Set());
-const decisions = stops.map(() => null);
-const selected = stops.map(() => null);
-const reasons = stops.map(() => "");
-const letters = ["Α", "Β", "Γ"];
+const opened = cases.map(() => new Set());
 let active = 0;
 
-function updateInstruction() {
-  const firstUnopened = stops[active].options.findIndex((_, index) => !opened[active].has(index));
-  const isGame = active >= practiceCount;
-  const complete = isGame ? opened[active].size >= 2 : firstUnopened === -1;
-  byId("instruction").textContent = isGame
-    ? (complete
-        ? "Συζητήστε την ερώτηση από κάτω. Πατήστε ξανά την επιλογή που θέλετε να κρατήσετε και γράψτε γιατί."
-        : "Πείτε ο καθένας τι θα έκανε και γιατί. Ψηφίστε, δείτε το αποτέλεσμα και δοκιμάστε τουλάχιστον μία άλλη επιλογή.")
-    : (complete
-        ? "Διαβάστε ξανά τις απαντήσεις και συζητήστε την ερώτηση από κάτω."
-        : "Πατήστε την επιλογή " + letters[firstUnopened] + ".");
-  byId("compare").hidden = !complete;
-  byId("decision").hidden = !isGame;
-  byId("next").hidden = !complete || (isGame && !reasons[active].trim());
-
-  if (isGame && selected[active] !== null) {
-    const choice = selected[active];
-    byId("chosen").textContent = "Κρατάτε: " + letters[choice] + ". " + stops[active].options[choice][0];
-  }
+function showDiscussion() {
+  const ready = opened[active].size === cases[active].options.length;
+  byId("compare").hidden = !ready;
+  byId("next").hidden = !ready;
 }
 
-function showStep(index) {
+function showCase(index) {
   active = index;
-  const stop = stops[index];
-  byId("progress").textContent = index < practiceCount
-    ? "Δοκιμή " + (index + 1) + " από " + practiceCount
-    : "Τι κάνουμε τώρα; · Επεισόδιο " + (index - practiceCount + 1) + " από " + (stops.length - practiceCount);
-  byId("step-title").textContent = stop.title;
-  byId("lead").hidden = !stop.lead;
-  byId("lead").textContent = stop.lead ? stop.lead[decisions[index - 1]] : "";
-  byId("question").textContent = stop.question;
-  byId("voices-panel").hidden = !stop.voices;
-  byId("voices").replaceChildren();
-  for (const voice of stop.voices ?? []) {
-    const line = document.createElement("li");
-    line.textContent = voice;
-    byId("voices").append(line);
-  }
-  byId("reason").value = reasons[index];
-  byId("comparison").textContent = stop.compare;
+  const current = cases[index];
+  byId("progress").textContent = "Περίπτωση " + (index + 1) + " από " + cases.length;
+  byId("step-title").textContent = current.title;
+  byId("question").textContent = current.situation;
+  byId("comparison").textContent = current.discuss;
   byId("back").hidden = index === 0;
-  const nextLabels = ["Ξεκινήστε το παιχνίδι", "Κρατήστε την απόφαση και συνεχίστε", "Κρατήστε την απόφαση και συνεχίστε", "Δείτε τις αποφάσεις σας"];
-  byId("next").textContent = nextLabels[index - practiceCount + 1] ?? "Επόμενο βήμα";
+  byId("next").textContent = index === cases.length - 1 ? "Γράψτε την πρότασή σας" : "Επόμενη περίπτωση";
   byId("options").replaceChildren();
 
-  stop.options.forEach(([label, condition, explanation, outcome], optionIndex) => {
+  current.options.forEach(([label, outcome], optionIndex) => {
     const item = document.createElement("div");
     const button = document.createElement("button");
-    const feedback = document.createElement("div");
+    const result = document.createElement("p");
     button.type = "button";
     button.className = "option";
-    button.textContent = letters[optionIndex] + ". " + label;
-    feedback.id = "result-" + optionIndex;
-    feedback.className = "feedback";
-    feedback.setAttribute("role", "status");
-    button.setAttribute("aria-controls", feedback.id);
+    button.textContent = (optionIndex === 0 ? "Α. " : "Β. ") + label;
+    result.id = "result-" + optionIndex;
+    result.className = "feedback";
+    result.setAttribute("role", "status");
+    button.setAttribute("aria-controls", result.id);
 
     function reveal() {
       button.setAttribute("aria-expanded", "true");
-      const summary = document.createElement("strong");
-      summary.textContent = outcome;
-      const detail = document.createElement("p");
-      detail.textContent = condition + ". " + explanation;
-      feedback.replaceChildren(summary, detail);
+      result.textContent = outcome;
     }
 
     button.setAttribute("aria-expanded", "false");
     if (opened[index].has(optionIndex)) reveal();
-    if (stop.voices && selected[index] === optionIndex) button.setAttribute("aria-current", "true");
     button.addEventListener("click", () => {
-      if (!opened[index].has(optionIndex)) {
-        opened[index].add(optionIndex);
-        reveal();
-      }
-      if (stop.voices && selected[index] !== optionIndex) {
-        byId("options").querySelector('[aria-current="true"]')?.removeAttribute("aria-current");
-        selected[index] = optionIndex;
-        button.setAttribute("aria-current", "true");
-        reasons[index] = "";
-        byId("reason").value = "";
-      }
-      updateInstruction();
+      opened[index].add(optionIndex);
+      reveal();
+      showDiscussion();
     });
-    item.append(button, feedback);
+    item.append(button, result);
     byId("options").append(item);
   });
-  updateInstruction();
+  showDiscussion();
 }
 
-function goToStep(index) {
-  showStep(index);
+function goToCase(index) {
+  showCase(index);
   byId("step-title").focus();
 }
+
 byId("back").addEventListener("click", () => {
   byId("record").hidden = true;
-  goToStep(active - 1);
-});
-byId("reason").addEventListener("input", (event) => {
-  reasons[active] = event.target.value;
-  byId("next").hidden = !reasons[active].trim();
+  goToCase(active - 1);
 });
 byId("next").addEventListener("click", () => {
-  if (active >= practiceCount && decisions[active] !== selected[active]) {
-    decisions[active] = selected[active];
-    for (let index = active + 1; index < stops.length; index++) {
-      opened[index].clear();
-      decisions[index] = null;
-      selected[index] = null;
-      reasons[index] = "";
-    }
-    form.reset();
-    fields.forEach((field) => field.setCustomValidity(""));
-  }
-  output.hidden = true;
-  copyStatus.textContent = "";
-  if (active < stops.length - 1) {
-    goToStep(active + 1);
+  if (active < cases.length - 1) {
+    goToCase(active + 1);
     return;
-  }
-  byId("recap").replaceChildren();
-  for (const line of recap()) {
-    const item = document.createElement("li");
-    item.textContent = line;
-    byId("recap").append(item);
   }
   byId("record").hidden = false;
   byId("record-title").focus();
 });
-showStep(0);
-
-function recap() {
-  return stops.slice(practiceCount).map((stop, index) => {
-    const step = index + practiceCount;
-    return stop.title + ": " + stop.options[decisions[step]][0] + " · " + reasons[step].trim();
-  });
-}
+showCase(0);
 
 const form = byId("finding-form");
 const fields = ["spot", "barrier", "change", "check"].map(byId);
@@ -457,8 +255,8 @@ form.addEventListener("submit", (event) => {
   }
   const [spot, barrier, change, check] = fields.map((field) => field.value.trim());
   report.value = [
-    group, ...recap(), "", "Επεισόδιο που διαλέξαμε: " + spot, "Εμπόδιο: " + barrier,
-    "Απόφαση: " + change, "Τι αλλάζει: " + check
+    group, "Περίπτωση: " + spot, "Εμπόδιο: " + barrier,
+    "Σήμερα: " + change, "Για τις επόμενες μέρες: " + check
   ].join("\n");
   output.hidden = false;
   report.focus();
