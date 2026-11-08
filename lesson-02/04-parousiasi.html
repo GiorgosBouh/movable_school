@@ -29,17 +29,16 @@
   .option[aria-expanded="true"] { background: var(--accent); color: var(--white); border-color: var(--accent); }
   button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
   .plan { padding-inline-start: 1.3rem; }
-  .plan li, .field li { margin-block: .35rem; }
+  .plan li { margin-block: .35rem; }
   .activity { border-top: 1px solid var(--line); padding-top: 1.15rem; }
   .options { display: grid; gap: .5rem; margin-block: .8rem; }
   .feedback { border-inline-start: .25rem solid var(--accent); padding: .5rem .8rem; margin: .5rem 0 .9rem; }
   .feedback:empty { padding: 0; border: 0; margin: 0; }
   .feedback p:last-child { margin-bottom: 0; }
-  .feedback meter { display: block; width: min(100%, 15rem); height: 1rem; margin-block: .35rem; }
   .compare { margin-top: 1rem; padding: .9rem; background: var(--paper); border-radius: .5rem; }
   .navigation { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .3rem; }
   .navigation .back { background: var(--white); color: var(--accent); }
-  .field, #record { margin-top: 1.25rem; }
+  #record { margin-top: 1.25rem; }
   form label { display: block; font-weight: 700; margin-top: .9rem; }
   input, textarea { width: 100%; border: 1px solid #788b7f; border-radius: .35rem; padding: .55rem; color: var(--ink); background: var(--white); }
   textarea { resize: vertical; }
@@ -67,8 +66,8 @@
         <ol class="plan">
           <li><strong>5 λεπτά</strong> · Διαβάστε την ιστορία. Ένας πατά τις επιλογές, ένας κρατά σημειώσεις και ένας προσέχει τον χρόνο.</li>
           <li><strong>20 λεπτά</strong> · Κάντε τα τρία βήματα της οθόνης. Πριν ανοίξετε κάθε επιλογή, πείτε τι περιμένετε να γίνει. Μετά συγκρίνετε όσα διαβάσατε και κρατήστε μία σημείωση για την ομάδα. Στο δεύτερο βήμα, αλλάξτε ποιος πατά τα κουμπιά.</li>
-          <li><strong>20 λεπτά</strong> · Κοιτάξτε τον χώρο του σχολείου ή κάντε το σκίτσο στην τάξη.</li>
-          <li><strong>10 λεπτά</strong> · Γράψτε ένα εμπόδιο, μία αλλαγή και πώς θα τη δοκιμάζατε.</li>
+          <li><strong>20 λεπτά</strong> · Παίξτε δύο γύρους «Τι κάνουμε τώρα;», περίπου 10 λεπτά τον καθένα.</li>
+          <li><strong>10 λεπτά</strong> · Γράψτε ποια απόφαση πήρατε στο παιχνίδι και γιατί.</li>
           <li><strong>5 λεπτά</strong> · Κάντε πρόβα για να πείτε το εύρημά σας στην τάξη σε ένα λεπτό.</li>
         </ol>
         <div class="activity">
@@ -87,29 +86,19 @@
           </div>
         </div>
       </section>
-      <section class="panel field" id="field" aria-labelledby="field-title" hidden>
-        <h2 id="field-title" tabindex="-1">Κοιτάξτε τον χώρο · 20 λεπτά</h2>
-        <p>Κοιτάξτε τον χώρο όπου θα κάνατε μια παρουσίαση. Από πού θα μιλούσε ο παρουσιαστής; Πού θα ήταν η μακέτα; Από ποιες θέσεις φαίνεται η οθόνη όταν η αίθουσα είναι γεμάτη;</p>
-        <ol>
-          <li>Σχεδιάστε τον χώρο. Σημειώστε την οθόνη, τις καρέκλες, το μικρόφωνο και το σημείο όπου θα βάλετε τη μακέτα.</li>
-          <li>Με τρία βέλη δείξτε πού θα πήγαινε ο Άρης για να μιλήσει, να δείξει τη μακέτα ή να καθίσει με την παρέα του. Κυκλώστε ένα σημείο που μπορεί να τον δυσκολέψει.</li>
-          <li>Σχεδιάστε μία αλλαγή και πείτε πώς θα ελέγχατε αν βοηθά με τις καρέκλες στημένες και το κοινό καθισμένο.</li>
-        </ol>
-        <p class="muted">Αν μείνετε στην τάξη, κάντε το σκίτσο από μνήμης ή με βάση την ιστορία. Σημειώστε τι χρειάζεται να δείτε από κοντά. Γράψτε τη λύση σας στη φόρμα από κάτω.</p>
-      </section>
     </div>
     <section class="panel" id="record" aria-labelledby="record-title" hidden>
       <h2 id="record-title" tabindex="-1">Γράψτε την απάντησή σας · 10 λεπτά</h2>
-      <p>Διαλέξτε ένα από τα εμπόδια που συζητήσατε. Πείτε τι δυσκολεύει τον Άρη, τι θα αλλάζατε και πώς θα βλέπατε αν η αλλαγή βοηθά.</p>
+      <p>Διαλέξτε έναν γύρο. Γράψτε τι δυσκόλευε τον Άρη, ποια απόφαση πήρατε και τι άλλαξε γι’ αυτόν.</p>
       <form id="finding-form">
-        <label for="spot">Πού και πότε συμβαίνει;</label>
-        <input id="spot" maxlength="160" required placeholder="Π.χ. στον διάδρομο, πριν από το μάθημα">
+        <label for="spot">Σε ποιον γύρο;</label>
+        <input id="spot" maxlength="160" required placeholder="Π.χ. Γύρος 2, έξω από το εργαστήριο">
         <label for="barrier">Ποιο είναι το εμπόδιο;</label>
         <textarea id="barrier" rows="2" maxlength="350" required placeholder="Τι θέλει να κάνει ο Άρης και τι τον δυσκολεύει;"></textarea>
-        <label for="change">Τι θα αλλάζατε;</label>
-        <textarea id="change" rows="2" maxlength="350" required placeholder="Περιγράψτε μια αλλαγή που θα βοηθούσε."></textarea>
-        <label for="check">Πώς θα δείτε αν βοηθά;</label>
-        <textarea id="check" rows="2" maxlength="350" required placeholder="Τι θα παρατηρήσετε, θα μετρήσετε ή θα δοκιμάσετε;"></textarea>
+        <label for="change">Τι αποφασίσατε;</label>
+        <textarea id="change" rows="2" maxlength="350" required placeholder="Γράψτε ποια επιλογή στηρίζετε."></textarea>
+        <label for="check">Γιατί βοηθά η απόφασή σας;</label>
+        <textarea id="check" rows="2" maxlength="350" required placeholder="Τι μπορεί να κάνει τώρα ο Άρης;"></textarea>
         <button class="action" type="submit">Ετοιμάστε την απάντησή σας</button>
       </form>
       <div id="finding-output" hidden>
@@ -118,12 +107,12 @@
         <button class="action" type="button" id="copy">Αντιγραφή ευρήματος</button>
         <p id="copy-status" role="status"></p>
         <h3>Ετοιμάστε τι θα πείτε · 5 λεπτά</h3>
-        <p>Διαλέξτε ποιος θα μιλήσει. Κάντε μια πρόβα ενός λεπτού. Ξεκινήστε με το σημείο που κοιτάξατε, δείξτε το σκίτσο σας και πείτε τι θα αλλάζατε και πώς θα βλέπατε αν βοηθά.</p>
+        <p>Διαλέξτε ποιος θα μιλήσει. Κάντε μια πρόβα ενός λεπτού. Πείτε στην τάξη τι συνέβη στον γύρο σας, ποια απόφαση πήρατε και τι μπόρεσε να κάνει ο Άρης χάρη σε αυτήν.</p>
       </div>
     </section>
   </div>
 </main>
-<footer>Η ιστορία του Άρη είναι παράδειγμα. Στο σχολείο σας, κοιτάξτε τι συμβαίνει στον χώρο που χρησιμοποιείτε κάθε μέρα.</footer>
+<footer>Η ιστορία του Άρη διαδραματίζεται σε ένα φανταστικό σχολείο.</footer>
 <script>
 const stops = [
   {
@@ -139,11 +128,11 @@ const stops = [
       [
         "Κινητό μικρόφωνο δίπλα στην οθόνη",
         "Μικρόφωνο στο ίδιο επίπεδο με την αίθουσα",
-        "Ο Άρης μπορεί να πάει δίπλα στην οθόνη και να παρουσιάσει. Ελέγξτε αν η διαδρομή μένει ελεύθερη όταν μπουν οι καρέκλες.",
+        "Ο Άρης μπορεί να πάει δίπλα στην οθόνη και να παρουσιάσει. Αν οι καρέκλες μπουν στη μέση, το μικρόφωνο θα παραμείνει δύσκολο να το φτάσει.",
         "Μπορεί να παρουσιάσει"
       ]
     ],
-    "compare": "Πού θα βάλετε το μικρόφωνο; Πείτε τι θα ελέγξετε στη διαδρομή όταν μπουν οι καρέκλες."
+    "compare": "Πού θα βάλετε το μικρόφωνο; Τι αλλάζει αν μια σειρά από καρέκλες κλείνει τον δρόμο ως εκεί;"
   },
   {
     "title": "Ο Άρης δείχνει τη μακέτα",
@@ -158,7 +147,7 @@ const stops = [
       [
         "Σε τραπέζι δίπλα στην ομάδα",
         "Το τραπέζι είναι δίπλα στο ελεύθερο πέρασμα",
-        "Ο Άρης πλησιάζει, παίρνει τα φύλλα και δείχνει ο ίδιος τη μακέτα. Ελέγξτε ότι οι καρέκλες δεν κλείνουν το πέρασμα.",
+        "Ο Άρης πλησιάζει, παίρνει τα φύλλα και δείχνει ο ίδιος τη μακέτα. Χρειάζεται να μείνει χώρος ανάμεσα στο τραπέζι και τις καρέκλες.",
         "Αναλαμβάνει τον ρόλο του"
       ]
     ],
@@ -177,25 +166,70 @@ const stops = [
       [
         "Χώρος δίπλα σε καθίσματα με θέα στην οθόνη",
         "Η παρέα μπορεί να καθίσει δίπλα του",
-        "Ο Άρης μπορεί να παρακολουθήσει μαζί με την παρέα του. Ελέγξτε τη θέα από τη θέση όταν γεμίσει η αίθουσα.",
+        "Ο Άρης μπορεί να παρακολουθήσει μαζί με την παρέα του. Αν καθίσουν άλλοι ακριβώς μπροστά του, μπορεί πάλι να του κρύβουν την οθόνη.",
         "Παρακολουθεί μαζί με την παρέα του"
       ]
     ],
     "compare": "Διαλέξτε μια θέση για τον Άρη και την παρέα του. Πώς θα δείτε αν φαίνεται η οθόνη όταν καθίσουν όλοι;"
+  },
+  {
+    "title": "Το κινητό μικρόφωνο χάλασε",
+    "question": "Σε δύο λεπτά ξεκινά η παρουσίαση. Το μόνο μικρόφωνο που λειτουργεί είναι στερεωμένο πάνω στο βάθρο. Ο Άρης έχει αναλάβει τις φωτογραφίες. Τι προτείνετε;",
+    "options": [
+      [
+        "Να διαβάσει άλλος τα λόγια του Άρη",
+        "Ένας συμμαθητής πηγαίνει στο βάθρο",
+        "Η παρουσίαση ξεκινά, αλλά ο Άρης δεν παρουσιάζει το κομμάτι που ετοίμασε.",
+        "Ο Άρης χάνει τον ρόλο του"
+      ],
+      [
+        "Να μιλήσει από το ίδιο επίπεδο και να καθίσει το κοινό πιο κοντά",
+        "Η ομάδα ρωτά τον Άρη αν τον βολεύει και φέρνει το κοινό πιο κοντά, αφήνοντας χώρο να περάσει",
+        "Ο Άρης παρουσιάζει τις φωτογραφίες του. Οι θεατές τον ακούν από πιο κοντά.",
+        "Ο Άρης παρουσιάζει ο ίδιος"
+      ]
+    ],
+    "compare": "Ποια απόφαση κρατά τον Άρη στον ρόλο του; Τι θα κάνετε ώστε να τον ακούν χωρίς να κλείσει το πέρασμα;"
+  },
+  {
+    "title": "Η αίθουσα γέμισε",
+    "question": "Ο Άρης τελείωσε και θέλει να δει την επόμενη ομάδα μαζί με την παρέα του. Οι μπροστινοί τού κρύβουν την οθόνη. Τι κάνετε;",
+    "options": [
+      [
+        "Του προτείνουμε μια θέση μόνο του στο πλάι",
+        "Από το πλάι φαίνεται καλύτερα η οθόνη",
+        "Ο Άρης βλέπει τις διαφάνειες, αλλά πρέπει να φύγει από την παρέα του.",
+        "Βλέπει την οθόνη, κάθεται μόνος"
+      ],
+      [
+        "Βρίσκουμε χώρο με θέα για τον Άρη και θέσεις δίπλα του",
+        "Η παρέα κάθεται μαζί και μένει ελεύθερο πέρασμα",
+        "Ο Άρης μπορεί να βλέπει την οθόνη και να παρακολουθεί με τους φίλους του.",
+        "Βλέπει την οθόνη και μένει με την παρέα του"
+      ]
+    ],
+    "compare": "Ποια επιλογή λύνει και τα δύο προβλήματα; Τι έλειπε από την πρώτη λύση;"
   }
 ];
 const group = "Ομάδα 4 · Σχολική παρουσίαση";
 const byId = (id) => document.getElementById(id);
+const practiceCount = 3;
 const opened = stops.map(() => new Set());
 const letters = ["Α", "Β", "Γ"];
 let active = 0;
 
 function updateInstruction() {
   const firstUnopened = stops[active].options.findIndex((_, index) => !opened[active].has(index));
-  const complete = firstUnopened === -1;
-  byId("instruction").textContent = complete
-    ? "Διαβάστε ξανά τις απαντήσεις και συζητήστε την ερώτηση από κάτω."
-    : "Πατήστε την επιλογή " + letters[firstUnopened] + ".";
+  const isGame = active >= practiceCount;
+  const hasDecision = opened[active].size > 0;
+  const complete = isGame ? hasDecision : firstUnopened === -1;
+  byId("instruction").textContent = isGame
+    ? (hasDecision
+        ? "Διαβάστε τι έγινε. Δοκιμάστε και την άλλη επιλογή αν θέλετε. Πριν προχωρήσετε, συμφωνήστε τι θα κάνατε και εξηγήστε γιατί."
+        : "Ο καθένας διαλέγει Α ή Β και λέει γιατί. Ψηφίστε και πατήστε την επιλογή της ομάδας. Αν ισοψηφήσετε, δοκιμάστε και τις δύο.")
+    : (complete
+        ? "Διαβάστε ξανά τις απαντήσεις και συζητήστε την ερώτηση από κάτω."
+        : "Πατήστε την επιλογή " + letters[firstUnopened] + ".");
   byId("compare").hidden = !complete;
   byId("next").hidden = !complete;
 }
@@ -203,15 +237,18 @@ function updateInstruction() {
 function showStep(index) {
   active = index;
   const stop = stops[index];
-  byId("progress").textContent = "Βήμα " + (index + 1) + " από " + stops.length;
+  byId("progress").textContent = index < practiceCount
+    ? "Δοκιμή " + (index + 1) + " από " + practiceCount
+    : "Τι κάνουμε τώρα; · Γύρος " + (index - practiceCount + 1) + " από " + (stops.length - practiceCount);
   byId("step-title").textContent = stop.title;
   byId("question").textContent = stop.question;
   byId("comparison").textContent = stop.compare;
   byId("back").hidden = index === 0;
-  byId("next").textContent = index === stops.length - 1 ? "Πάμε να κοιτάξουμε τον χώρο" : "Επόμενο βήμα";
+  const nextLabels = ["Παίξτε τον πρώτο γύρο", "Παίξτε τον δεύτερο γύρο", "Γράψτε την απόφασή σας"];
+  byId("next").textContent = nextLabels[index - practiceCount + 1] ?? "Επόμενο βήμα";
   byId("options").replaceChildren();
 
-  stop.options.forEach(([label, condition, explanation, outcome, width], optionIndex) => {
+  stop.options.forEach(([label, condition, explanation, outcome], optionIndex) => {
     const item = document.createElement("div");
     const button = document.createElement("button");
     const feedback = document.createElement("div");
@@ -230,13 +267,7 @@ function showStep(index) {
       const detail = document.createElement("p");
       detail.textContent = condition + ". " + explanation;
       feedback.replaceChildren(summary, detail);
-      if (width !== undefined) {
-        const meter = document.createElement("meter");
-        meter.max = 145;
-        meter.value = width;
-        meter.setAttribute("aria-label", "Ελεύθερο πλάτος: " + width + " εκατοστά");
-        feedback.append(meter);
-      }
+
     }
 
     button.setAttribute("aria-expanded", "false");
@@ -264,9 +295,8 @@ byId("next").addEventListener("click", () => {
     goToStep(active + 1);
     return;
   }
-  byId("field").hidden = false;
   byId("record").hidden = false;
-  byId("field-title").focus();
+  byId("record-title").focus();
 });
 showStep(0);
 
@@ -291,8 +321,8 @@ form.addEventListener("submit", (event) => {
   }
   const [spot, barrier, change, check] = fields.map((field) => field.value.trim());
   report.value = [
-    group, "Σημείο: " + spot, "Εμπόδιο: " + barrier,
-    "Αλλαγή: " + change, "Έλεγχος: " + check
+    group, "Γύρος: " + spot, "Εμπόδιο: " + barrier,
+    "Απόφαση: " + change, "Γιατί βοηθά: " + check
   ].join("\n");
   output.hidden = false;
   report.focus();
