@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Διαδραστική αποστολή του ομίλου MoveAble School για την κινητική προσβασιμότητα.">
-<title>Η είσοδος · MoveAble School</title>
+<title>Από την είσοδο στην επόμενη αίθουσα · MoveAble School</title>
 <style>
   :root { color-scheme: light; --ink: #182520; --muted: #465950; --paper: #f5f6ef; --white: #fff; --line: #cbd4cc; --accent: #155f53; }
   * { box-sizing: border-box; }
@@ -22,30 +22,26 @@
   .hero p:last-child { max-width: 65ch; font-size: 1.13rem; }
   .work { max-width: 52rem; }
   .panel { background: var(--white); border: 1px solid var(--line); border-radius: .9rem; padding: clamp(1rem, 3vw, 1.75rem); }
-  .muted { color: var(--muted); }
-  button, input, textarea { font: inherit; }
+  button, textarea { font: inherit; }
   button { cursor: pointer; }
-  .option { min-height: 44px; width: 100%; border: 1px solid var(--line); border-radius: .5rem; background: var(--white); text-align: left; padding: .6rem .85rem; color: var(--ink); }
-  .option[aria-expanded="true"] { background: var(--accent); color: var(--white); border-color: var(--accent); }
-  button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
+  button:focus-visible, textarea:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
   .plan { padding-inline-start: 1.3rem; }
   .plan li { margin-block: .35rem; }
-  .activity { border-top: 1px solid var(--line); padding-top: 1.15rem; }
-  .options { display: grid; gap: .5rem; margin-block: .8rem; }
-  .feedback { border-inline-start: .25rem solid var(--accent); padding: .5rem .8rem; margin: .5rem 0 .9rem; }
-  .feedback:empty { padding: 0; border: 0; margin: 0; }
   .compare { margin-top: 1rem; padding: .9rem; background: var(--paper); border-radius: .5rem; }
-  .navigation { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .3rem; }
-  .navigation .back { background: var(--white); color: var(--accent); }
-  #record { margin-top: 1.25rem; }
   form label { display: block; font-weight: 700; margin-top: .9rem; }
-  input, textarea { width: 100%; border: 1px solid #788b7f; border-radius: .35rem; padding: .55rem; color: var(--ink); background: var(--white); }
+  textarea { width: 100%; border: 1px solid #788b7f; border-radius: .35rem; padding: .55rem; color: var(--ink); background: var(--white); }
   textarea { resize: vertical; }
   .action { border: 1px solid var(--accent); border-radius: .5rem; padding: .65rem .9rem; min-height: 44px; background: var(--accent); color: var(--white); font-weight: 700; margin-top: .8rem; }
   #copy { background: var(--white); color: var(--accent); }
   #finding-output { margin-top: 1rem; }
   #copy-status { margin-top: .5rem; }
   footer { margin-block: 1.5rem 2.5rem; color: var(--muted); }
+  details { border: 1px solid var(--line); border-radius: .5rem; margin-block: .55rem; padding: .55rem .8rem; }
+  summary { cursor: pointer; font-weight: 700; min-height: 44px; align-content: center; }
+  summary:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
+  .panel + .panel { margin-top: 1rem; }
+  form { margin-bottom: 1rem; }
+  .compare h3 { margin-bottom: .65rem; }
 </style>
 </head>
 <body>
@@ -53,222 +49,111 @@
 <main>
   <header class="hero">
     <p class="eyebrow">Ομάδα 1 από 4</p>
-    <h1>Η είσοδος</h1>
-    <h2>Το σενάριο της ομάδας σας</h2>
-    <p>Στην είσοδο του σχολείου υπάρχει πάντα φύλακας. Στην ιστορία μας ο Άρης, που χρησιμοποιεί αμαξίδιο, μπαίνει από την πλαϊνή πόρτα με τη ράμπα. Από το φυλάκιο της κεντρικής πύλης ο φύλακας δεν βλέπει ποιος περιμένει στην πλαϊνή πόρτα.</p>
+    <h1>Από την είσοδο στην επόμενη αίθουσα</h1>
+    <p>Η Δανάη χρησιμοποιεί αμαξίδιο και ξεκινά τη Δευτέρα στην Α΄ Λυκείου. Την πρώτη ώρα έχει μάθημα στην Α1 και τη δεύτερη σε άλλη αίθουσα. Ετοιμάστε τις οδηγίες που θα της δίνατε για να ξέρει πού να πάει και σε ποιον να μιλήσει αν αλλάξει κάτι.</p>
   </header>
-  <noscript><p>Για τις διαδραστικές δοκιμές χρειάζεται ενεργοποιημένη JavaScript.</p></noscript>
+  <noscript><p>Για να ανοίξετε την αλλαγή στο σενάριο και να ετοιμάσετε την πρότασή σας χρειάζεται JavaScript.</p></noscript>
   <div class="work">
-    <div>
-      <section class="panel" aria-labelledby="mission-title">
-        <h2 id="mission-title">Η αποστολή σας · περίπου 60 λεπτά</h2>
-        <ol class="plan">
-          <li><strong>5 λεπτά</strong> · Διαβάστε την εισαγωγή. Μοιράστε ποιος διαβάζει, ποιος πατά τα κουμπιά και ποιος κρατά σημειώσεις. Αλλάξτε ρόλους σε κάθε περίπτωση.</li>
-          <li><strong>30 λεπτά</strong> · Δουλέψτε τις τρεις περιπτώσεις, περίπου 10 λεπτά την καθεμία. Πείτε πρώτα τι θα κάνατε. Ανοίξτε και τις δύο επιλογές και κρατήστε μία σύντομη σημείωση από τη συζήτησή σας.</li>
-          <li><strong>15 λεπτά</strong> · Διαλέξτε μία περίπτωση. Συμφωνήστε τι θα κάνατε σήμερα και τι θα ζητούσατε να αλλάξει για τις επόμενες μέρες. Γράψτε την πρότασή σας.</li>
-          <li><strong>10 λεπτά</strong> · Ανταλλάξτε προτάσεις με άλλη ομάδα. Ρωτήστε ποιος θα κάνει την αλλαγή και τι μένει άλυτο. Βελτιώστε μία πρόταση με βάση την απάντησή τους.</li>
-        </ol>
-        <div class="activity">
-          <p class="eyebrow" id="progress"></p>
-          <h3 id="step-title" tabindex="-1"></h3>
-          <p id="question"></p>
-          <p>Πείτε τι θα κάνατε και μετά πατήστε Α και Β για να δείτε τι αλλάζει.</p>
-          <div class="options" id="options" role="group" aria-labelledby="step-title"></div>
-          <div id="compare" class="compare" hidden>
-            <h3>Συζητήστε πριν προχωρήσετε</h3>
-            <p id="comparison"></p>
-            <p>Συμφωνήστε τι θα κάνατε και κρατήστε μία πρόταση για το τέλος.</p>
-          </div>
-          <div class="navigation">
-            <button class="action back" id="back" type="button" hidden>Προηγούμενο βήμα</button>
-            <button class="action" id="next" type="button" hidden></button>
-          </div>
-        </div>
-      </section>
-    </div>
-    <section class="panel" id="record" aria-labelledby="record-title" hidden>
-      <h2 id="record-title" tabindex="-1">Γράψτε την πρότασή σας · 15 λεπτά</h2>
-      <p>Διαλέξτε μία από τις τρεις περιπτώσεις. Μπορείτε να συνδυάσετε τις επιλογές ή να προτείνετε δική σας λύση.</p>
-      <form id="finding-form">
-        <label for="spot">Ποια περίπτωση διαλέξατε;</label>
-        <input id="spot" maxlength="160" required placeholder="Γράψτε τον τίτλο ή τον αριθμό της.">
-        <label for="barrier">Τι δυσκολεύει τον Άρη;</label>
-        <textarea id="barrier" rows="2" maxlength="350" required placeholder="Πείτε τι προσπαθεί να κάνει και τι τον εμποδίζει."></textarea>
-        <label for="change">Τι θα κάνατε σήμερα;</label>
-        <textarea id="change" rows="2" maxlength="350" required placeholder="Γράψτε μία ενέργεια και ποιος θα την κάνει."></textarea>
-        <label for="check">Τι πρέπει να αλλάξει για τις επόμενες μέρες;</label>
-        <textarea id="check" rows="2" maxlength="350" required placeholder="Ποιος μπορεί να το αναλάβει; Πώς βοηθά η αλλαγή τον Άρη;"></textarea>
-        <button class="action" type="submit">Ετοιμάστε την απάντησή σας</button>
+    <section class="panel" aria-labelledby="plan-title">
+      <h2 id="plan-title">Το πλάνο της ομάδας · 60 λεπτά</h2>
+      <ol class="plan">
+        <li><strong>5΄</strong> Διαβάστε την αποστολή. Ορίστε ποιος διαβάζει, ποιος γράφει και ποιος κρατά τον χρόνο.</li>
+        <li><strong>10΄</strong> Ανοίξτε τις τρεις κάρτες και πείτε ποια πληροφορία αλλάζει περισσότερο την πρότασή σας.</li>
+        <li><strong>15΄</strong> Συμφωνήστε στις τρεις απαντήσεις και γράψτε τις. Μετά πατήστε «Δείτε τι αλλάζει».</li>
+        <li><strong>15΄</strong> Διαβάστε το νέο δεδομένο. Πείτε τι από την αρχική πρόταση κρατάτε και τι αλλάζετε.</li>
+        <li><strong>10΄</strong> Ανταλλάξτε την πρότασή σας με άλλη ομάδα. Ζητήστε της να σας πει τι χρειάζεται διευκρίνιση.</li>
+        <li><strong>5΄</strong> Κάντε την τελική διόρθωση και αντιγράψτε την πρόταση.</li>
+      </ol>
+    </section>
+    <section class="panel" aria-labelledby="cards-title">
+      <h2 id="cards-title">1. Ανοίξτε τις κάρτες</h2>
+      <details><summary>Τι ξέρουμε για την είσοδο</summary><p>Ο φύλακας είναι πάντα στην είσοδο. Στην άσκηση, από την πύλη υπάρχει διαδρομή χωρίς σκαλοπάτια έως την Α1. Η Δανάη έρχεται πρώτη φορά και δεν ξέρει ποια πόρτα του κτιρίου οδηγεί στην αίθουσα.</p></details>
+      <details><summary>Τι γράφει το πρόγραμμα</summary><p>Το δεύτερο μάθημα είναι στη Β2, στον όροφο. Στο παράδειγμα υπάρχει ανελκυστήρας. Από την Α1 η πινακίδα «Β2» δείχνει τη σκάλα. Ο ανελκυστήρας βρίσκεται στον άλλο διάδρομο.</p></details>
+      <details><summary>Τι λέει η Δανάη</summary><p>«Την πρώτη μέρα θέλω να μου πουν από πού πάω. Μετά θέλω να βρίσκω μόνη μου τις αίθουσες. Αν αλλάξει το πρόγραμμα, πείτε μου πριν φύγω από την Α1».</p></details>
+      <p>Πριν γράψετε, συμφωνήστε τι θέλει να κάνει ο μαθητής ή η μαθήτρια και τι τον ή τη δυσκολεύει.</p>
+    </section>
+    <section class="panel" aria-labelledby="draft-title">
+      <h2 id="draft-title">2. Γράψτε την πρώτη πρόταση</h2>
+      <form id="proposal">
+      <label for="draft-1">Τι θα πει ο φύλακας στη Δανάη όταν φτάσει;</label>
+      <textarea id="draft-1" rows="3" maxlength="500" required placeholder="Γράψτε μια σύντομη οδηγία από την είσοδο προς την Α1."></textarea>
+      <label for="draft-2">Πώς θα πάει από την Α1 στη Β2;</label>
+      <textarea id="draft-2" rows="3" maxlength="500" required placeholder="Πείτε ποια πληροφορία πρέπει να έχει πριν ξεκινήσει και πού θα τη βρει."></textarea>
+      <label for="draft-3">Ποιος ενημερώνει το τμήμα αν αλλάξει η αίθουσα;</label>
+      <textarea id="draft-3" rows="3" maxlength="500" required placeholder="Πείτε πότε θα γίνει η ενημέρωση και πώς θα φτάσει σε όλους."></textarea>
+        <button class="action" id="reveal" type="button">Δείτε τι αλλάζει</button>
+        <section class="compare" id="twist" aria-labelledby="twist-title" hidden>
+          <h3 id="twist-title" tabindex="-1">3. Κάτι άλλαξε</h3>
+          <p>Στο τέλος της πρώτης ώρας, ο ανελκυστήρας τίθεται εκτός λειτουργίας. Μία αίθουσα στο ισόγειο είναι ελεύθερη και χωρά όλο το τμήμα. Η καθηγήτρια της δεύτερης ώρας βρίσκεται ακόμη στο γραφείο.</p>
+          <p>Γράψτε ποιον ενημερώνετε πρώτο, τι πρέπει να αποφασιστεί και τι μήνυμα θα πάρει όλο το τμήμα. Η Δανάη πρέπει να ξέρει πού γίνεται το μάθημα πριν ξεκινήσει για τη Β2.</p>
+          <label for="revision">Τι κρατάτε και τι αλλάζετε στην πρότασή σας;</label>
+          <textarea id="revision" rows="4" maxlength="700" disabled required placeholder="Γράψτε τι θα κάνετε τώρα και ποιος θα το αναλάβει."></textarea>
+          <h3>4. Συζητήστε με άλλη ομάδα</h3>
+          <p>Διαβάστε της την πρότασή σας. Ζητήστε να σας πει ποιο βήμα θα δυσκολευόταν να ακολουθήσει. Ακούστε και τη δική της πρόταση. Μετά διορθώστε την απάντησή σας πιο πάνω.</p>
+          <button class="action" type="submit">Ετοιμάστε την τελική πρόταση</button>
+        </section>
       </form>
       <div id="finding-output" hidden>
-        <label for="report"><strong>Σύνοψη για τον κοινό πίνακα</strong></label>
-        <textarea id="report" rows="7" readonly></textarea>
-        <button class="action" type="button" id="copy">Αντιγραφή ευρήματος</button>
+        <label for="report"><strong>Η πρότασή σας</strong></label>
+        <textarea id="report" rows="10" readonly></textarea>
+        <button class="action" type="button" id="copy">Αντιγραφή πρότασης</button>
         <p id="copy-status" role="status"></p>
-      </div>
-      <div class="compare">
-        <h3>Ανταλλάξτε προτάσεις · 10 λεπτά</h3>
-        <p>Διαβάστε την πρότασή σας σε μια άλλη ομάδα και ακούστε τη δική της. Ρωτήστε ο ένας τον άλλον «Ποιος το αναλαμβάνει;» και «Τι μένει άλυτο;». Αλλάξτε κάτι στην απάντησή σας και πατήστε ξανά «Ετοιμάστε την απάντησή σας».</p>
       </div>
     </section>
   </div>
 </main>
-<footer><p>Οι ιστορίες είναι γραμμένες για το μάθημα και βασίζονται σε εμπόδια που έχουν καταγραφεί σε σχολεία.</p>
-  <p><a href="https://storymaps.arcgis.com/stories/a42940d9d44a428bbf62fc204a077519">Μαθητική έρευνα για τις εισόδους του σχολικού συγκροτήματος στη Χαλκίδα</a></p></footer>
+<footer>
+  <p>Οι περιπτώσεις είναι υποθετικά παραδείγματα για το μάθημα. Η διάταξη των χώρων ανήκει στην άσκηση.</p>
+  <p><a href="https://www.bromley.gov.uk/special-educational-needs/guide-physical-accessibility-schools-parents-carers">Πηγή έμπνευσης · Οδηγός του Bromley για τη φυσική προσβασιμότητα στα σχολεία</a></p>
+</footer>
 <script>
-const cases = [
-  {
-    "title": "Πριν από το πρώτο κουδούνι",
-    "situation": "Ο φύλακας είναι στην κεντρική πύλη και υποδέχεται τους μαθητές. Η πλαϊνή πόρτα με τη ράμπα είναι ακόμη κλειστή. Ο Άρης είναι έξω από την πλαϊνή πόρτα και βλέπει έναν συμμαθητή του που μόλις μπήκε στην αυλή.",
-    "options": [
-      [
-        "Ο συμμαθητής ειδοποιεί τον φύλακα ότι ο Άρης περιμένει",
-        "Ο φύλακας ανοίγει την πλαϊνή πόρτα και ο Άρης μπαίνει. Αύριο μπορεί πάλι να χρειαστεί συμμαθητή για να τον ειδοποιήσει."
-      ],
-      [
-        "Η διεύθυνση συμφωνεί με τον φύλακα πότε ανοίγει η πλαϊνή πόρτα το πρωί",
-        "Η είσοδος με τη ράμπα περιλαμβάνεται στο πρωινό άνοιγμα, με την επίβλεψη που ορίζει το σχολείο. Ο Άρης ξέρει από πριν πότε μπορεί να μπει."
-      ]
-    ],
-    "discuss": "Τι κάνετε σήμερα το πρωί; Τι θα έπρεπε να έχει συμφωνήσει η διεύθυνση με τον φύλακα ώστε ο Άρης να μπαίνει στην ώρα του κάθε μέρα;"
-  },
-  {
-    "title": "Φτάνει μετά το κουδούνι",
-    "situation": "Ο Άρης φτάνει στη δεύτερη ώρα και η πλαϊνή πόρτα είναι κλειστή. Ο φύλακας είναι στο φυλάκιο, αλλά δεν βλέπει τη ράμπα. Στην πλαϊνή πόρτα υπάρχει το τηλέφωνο του σχολείου, αλλά δεν υπάρχει κουδούνι.",
-    "options": [
-      [
-        "Ο Άρης καλεί το γραφείο και το γραφείο ειδοποιεί τον φύλακα",
-        "Ο φύλακας μαθαίνει ότι ο Άρης περιμένει και του ανοίγει. Η λύση λειτουργεί αν ο Άρης έχει κινητό και το γραφείο απαντήσει."
-      ],
-      [
-        "Το σχολείο βάζει κουδούνι δίπλα στη ράμπα, σε σημείο που φτάνει ο Άρης",
-        "Το κουδούνι ακούγεται στο φυλάκιο. Ο Άρης ειδοποιεί απευθείας τον φύλακα. Μέχρι να τοποθετηθεί, μπορεί να καλεί το γραφείο."
-      ]
-    ],
-    "discuss": "Ο φύλακας είναι εκεί και στις δύο περιπτώσεις. Τι διαφορά κάνει το πώς τον ειδοποιεί ο Άρης; Ποια λύση λειτουργεί σήμερα και ποια μπορεί να οργανώσει το σχολείο;"
-  },
-  {
-    "title": "Η πόρτα ανοίγει, ο κάδος μένει στη μέση",
-    "situation": "Στο σχόλασμα ο φύλακας έχει ανοίξει την πλαϊνή πόρτα. Ένας κάδος έχει μετακινηθεί μπροστά στη ράμπα για την καθαριότητα. Υπάρχει ελεύθερος χώρος στην αυλή, δίπλα στην αποθήκη.",
-    "options": [
-      [
-        "Ενημερώνουμε τον φύλακα για να ζητήσει να μετακινηθεί ο κάδος",
-        "Το πέρασμα ανοίγει σήμερα. Αν ο κάδος επιστρέψει στην ίδια θέση, ο επόμενος μαθητής θα πρέπει πάλι να ζητήσει βοήθεια."
-      ],
-      [
-        "Το σχολείο συμφωνεί με την καθαριότητα πού θα μένει ο κάδος",
-        "Ο κάδος έχει θέση δίπλα στην αποθήκη, έξω από το πέρασμα. Όταν ανοίγει την πόρτα ο φύλακας, η ράμπα μπορεί να χρησιμοποιηθεί αμέσως."
-      ]
-    ],
-    "discuss": "Ποιος χρειάζεται να ξέρει πότε ανοίγει η πόρτα και ποιος πού μένει ο κάδος; Ποια λύση χρειάζεται τώρα και ποια για κάθε μέρα;"
-  }
-];
-const group = "Ομάδα 1 · Είσοδος";
 const byId = (id) => document.getElementById(id);
-const opened = cases.map(() => new Set());
-let active = 0;
-
-function showDiscussion() {
-  const ready = opened[active].size === cases[active].options.length;
-  byId("compare").hidden = !ready;
-  byId("next").hidden = !ready;
-}
-
-function showCase(index) {
-  active = index;
-  const current = cases[index];
-  byId("progress").textContent = "Περίπτωση " + (index + 1) + " από " + cases.length;
-  byId("step-title").textContent = current.title;
-  byId("question").textContent = current.situation;
-  byId("comparison").textContent = current.discuss;
-  byId("back").hidden = index === 0;
-  byId("next").textContent = index === cases.length - 1 ? "Γράψτε την πρότασή σας" : "Επόμενη περίπτωση";
-  byId("options").replaceChildren();
-
-  current.options.forEach(([label, outcome], optionIndex) => {
-    const item = document.createElement("div");
-    const button = document.createElement("button");
-    const result = document.createElement("p");
-    button.type = "button";
-    button.className = "option";
-    button.textContent = (optionIndex === 0 ? "Α. " : "Β. ") + label;
-    result.id = "result-" + optionIndex;
-    result.className = "feedback";
-    result.setAttribute("role", "status");
-    button.setAttribute("aria-controls", result.id);
-
-    function reveal() {
-      button.setAttribute("aria-expanded", "true");
-      result.textContent = outcome;
-    }
-
-    button.setAttribute("aria-expanded", "false");
-    if (opened[index].has(optionIndex)) reveal();
-    button.addEventListener("click", () => {
-      opened[index].add(optionIndex);
-      reveal();
-      showDiscussion();
-    });
-    item.append(button, result);
-    byId("options").append(item);
-  });
-  showDiscussion();
-}
-
-function goToCase(index) {
-  showCase(index);
-  byId("step-title").focus();
-}
-
-byId("back").addEventListener("click", () => {
-  byId("record").hidden = true;
-  goToCase(active - 1);
-});
-byId("next").addEventListener("click", () => {
-  if (active < cases.length - 1) {
-    goToCase(active + 1);
-    return;
-  }
-  byId("record").hidden = false;
-  byId("record-title").focus();
-});
-showCase(0);
-
-const form = byId("finding-form");
-const fields = ["spot", "barrier", "change", "check"].map(byId);
+const form = byId("proposal");
+const draft = ["draft-1", "draft-2", "draft-3"].map(byId);
+const revision = byId("revision");
 const output = byId("finding-output");
 const report = byId("report");
 const copyStatus = byId("copy-status");
+
+function filled(field) {
+  field.setCustomValidity(field.value.trim() ? "" : "Γράψτε την απάντηση της ομάδας σας.");
+  return field.reportValidity();
+}
+
+byId("reveal").addEventListener("click", () => {
+  if (!draft.every(filled)) return;
+  byId("twist").hidden = false;
+  revision.disabled = false;
+  byId("reveal").hidden = true;
+  byId("twist-title").focus();
+});
 
 form.addEventListener("input", (event) => {
   event.target.setCustomValidity("");
   output.hidden = true;
   copyStatus.textContent = "";
 });
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const empty = fields.find((field) => !field.value.trim());
-  if (empty) {
-    empty.setCustomValidity("Συμπληρώστε το πεδίο με το εύρημά σας.");
-    empty.reportValidity();
-    return;
-  }
-  const [spot, barrier, change, check] = fields.map((field) => field.value.trim());
+  if (revision.disabled || ![...draft, revision].every(filled)) return;
   report.value = [
-    group, "Περίπτωση: " + spot, "Εμπόδιο: " + barrier,
-    "Σήμερα: " + change, "Για τις επόμενες μέρες: " + check
-  ].join("\n");
+    "Ομάδα 1 από 4 · Από την είσοδο στην επόμενη αίθουσα",
+    ...draft.map((field) => field.labels[0].textContent + "\n" + field.value.trim()),
+    "Μετά την αλλαγή\n" + revision.value.trim()
+  ].join("\n\n");
   output.hidden = false;
   report.focus();
 });
+
 byId("copy").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(report.value);
-    copyStatus.textContent = "Το εύρημα αντιγράφηκε.";
+    copyStatus.textContent = "Η πρόταση αντιγράφηκε.";
   } catch {
     report.focus();
     report.select();
-    copyStatus.textContent = "Το κείμενο επιλέχθηκε. Χρησιμοποιήστε Ctrl+C, ⌘+C ή την αντιγραφή της συσκευής.";
+    copyStatus.textContent = "Το κείμενο επιλέχθηκε. Χρησιμοποιήστε την αντιγραφή της συσκευής σας.";
   }
 });
 </script>
