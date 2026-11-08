@@ -3,144 +3,240 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Διαδραστική αποστολή του ομίλου MoveAble School για την κινητική προσβασιμότητα.">
+<meta name="description" content="Ομαδική δραστηριότητα του MoveAble School για την κινητική προσβασιμότητα στο λύκειο.">
 <title>Στη συγκέντρωση και στη Γυμναστική · MoveAble School</title>
 <style>
-  :root { color-scheme: light; --ink: #182520; --muted: #465950; --paper: #f5f6ef; --white: #fff; --line: #cbd4cc; --accent: #67447d; }
+  :root {
+    color-scheme: light;
+    --ink: #152820;
+    --muted: #42564f;
+    --paper: #f5f6f2;
+    --white: #fff;
+    --line: #cbd5ce;
+    --accent: #67447d;
+    --tint: #f4edf8;
+  }
   * { box-sizing: border-box; }
   body { margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.6 system-ui, sans-serif; }
-  main, .masthead-inner, footer { max-width: 72rem; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 3rem); }
-  .masthead { background: var(--accent); color: var(--white); padding-block: 1.25rem; }
-  .masthead-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
-  .masthead strong { letter-spacing: .04em; }
-  .hero { padding-block: 2.4rem 1.5rem; }
-  .eyebrow { color: var(--accent); font-weight: 750; font-size: .9rem; letter-spacing: .03em; }
-  h1, h2, h3, p { margin: 0 0 .6rem; }
-  h1 { font-size: clamp(2.3rem, 6vw, 4.7rem); line-height: 1.06; letter-spacing: -.035em; margin-bottom: 1rem; }
-  h2 { line-height: 1.25; font-size: clamp(1.4rem, 4vw, 2rem); }
-  h3 { line-height: 1.3; }
-  .hero p:last-child { max-width: 65ch; font-size: 1.13rem; }
-  .work { max-width: 52rem; }
-  .panel { background: var(--white); border: 1px solid var(--line); border-radius: .9rem; padding: clamp(1rem, 3vw, 1.75rem); }
+  main, .masthead-inner, footer { max-width: 64rem; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 3rem); }
+  .masthead { background: var(--accent); color: var(--white); padding-block: 1rem; }
+  .masthead-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .3rem 1.25rem; }
+  .masthead strong { letter-spacing: .025em; }
+  .hero { padding-block: clamp(1.7rem, 5vw, 3.6rem) 1.4rem; }
+  .eyebrow { color: var(--accent); font-size: .9rem; font-weight: 760; letter-spacing: .025em; }
+  h1, h2, h3, p { margin: 0 0 .65rem; }
+  h1 { font-size: clamp(2rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -.032em; max-width: 17ch; }
+  h2 { font-size: clamp(1.45rem, 3.5vw, 2rem); line-height: 1.2; }
+  h3 { font-size: 1.18rem; line-height: 1.35; }
+  .intro { max-width: 67ch; font-size: 1.12rem; margin-top: .95rem; }
+  .objective { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: .75rem; overflow: hidden; margin-top: 1.25rem; }
+  .objective div { padding: .95rem 1rem; background: var(--white); }
+  .objective strong, .objective span { display: block; }
+  .objective strong { color: var(--accent); margin-bottom: .2rem; }
+  .plan { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .45rem; list-style: none; margin: 0 0 1.2rem; padding: 0; }
+  .plan li { padding: .65rem .75rem; border-radius: .55rem; border: 1px solid var(--line); background: var(--white); }
+  .plan li[aria-current] { border-color: var(--accent); background: var(--tint); }
+  .plan span, .plan strong { display: block; }
+  .plan span { color: var(--muted); font-size: .87rem; }
+  .panel { background: var(--white); border: 1px solid var(--line); border-radius: .8rem; padding: clamp(1rem, 3vw, 1.8rem); margin-bottom: 1rem; }
+  .roles, .change { margin-block: .9rem; background: var(--tint); border-inline-start: .25rem solid var(--accent); padding: .75rem 1rem; border-radius: .35rem; }
+  .roles p:last-child, .change p:last-child, .cards p:last-child { margin-bottom: 0; }
+  .cards details { border: 1px solid var(--line); border-radius: .55rem; margin-block: .55rem; padding: .25rem .85rem; }
+  .cards details[open] { background: var(--tint); }
+  .cards details p { padding-block: .35rem .65rem; }
+  summary { cursor: pointer; font-weight: 720; min-height: 44px; align-content: center; }
   button, textarea { font: inherit; }
-  button { cursor: pointer; }
-  button:focus-visible, textarea:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
-  .plan { padding-inline-start: 1.3rem; }
-  .plan li { margin-block: .35rem; }
-  .compare { margin-top: 1rem; padding: .9rem; background: var(--paper); border-radius: .5rem; }
-  form label { display: block; font-weight: 700; margin-top: .9rem; }
-  textarea { width: 100%; border: 1px solid #788b7f; border-radius: .35rem; padding: .55rem; color: var(--ink); background: var(--white); }
-  textarea { resize: vertical; }
-  .action { border: 1px solid var(--accent); border-radius: .5rem; padding: .65rem .9rem; min-height: 44px; background: var(--accent); color: var(--white); font-weight: 700; margin-top: .8rem; }
-  #copy { background: var(--white); color: var(--accent); }
-  #finding-output { margin-top: 1rem; }
-  #copy-status { margin-top: .5rem; }
-  footer { margin-block: 1.5rem 2.5rem; color: var(--muted); }
-  details { border: 1px solid var(--line); border-radius: .5rem; margin-block: .55rem; padding: .55rem .8rem; }
-  summary { cursor: pointer; font-weight: 700; min-height: 44px; align-content: center; }
-  summary:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
-  .panel + .panel { margin-top: 1rem; }
-  form { margin-bottom: 1rem; }
-  .compare h3 { margin-bottom: .65rem; }
+  button:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
+  label { display: block; font-weight: 720; margin-top: .9rem; }
+  .hint { color: var(--muted); margin: .2rem 0 .4rem; }
+  textarea { display: block; width: 100%; border: 1px solid #738980; border-radius: .4rem; padding: .55rem .7rem; resize: vertical; color: var(--ink); background: var(--white); }
+  .action { cursor: pointer; border: 1px solid var(--accent); border-radius: .5rem; padding: .62rem .9rem; min-height: 44px; margin-top: .95rem; background: var(--accent); color: var(--white); font-weight: 720; }
+  .action.secondary { background: var(--white); color: var(--accent); }
+  .checks { padding-inline-start: 1.35rem; }
+  .checks li { margin-block: .25rem; }
+  #report { background: var(--paper); }
+  #copy-status { margin-top: .6rem; }
+  footer { color: var(--muted); margin-block: 1.5rem 2.5rem; }
+  footer a { color: var(--accent); }
+  @media (max-width: 38rem) {
+    .objective { grid-template-columns: 1fr; }
+    .plan { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
 </style>
 </head>
 <body>
-<header class="masthead"><div class="masthead-inner"><strong>MoveAble School</strong><span>Μάθημα 02 · Κινητική προσβασιμότητα</span></div></header>
+<header class="masthead">
+  <div class="masthead-inner"><strong>MoveAble School</strong><span>Μάθημα 2 · Κινητική προσβασιμότητα</span></div>
+</header>
 <main>
   <header class="hero">
-    <p class="eyebrow">Ομάδα 4 από 4</p>
+    <p class="eyebrow">Ομάδα 4 από 4 · 60 λεπτά στην τάξη</p>
     <h1>Στη συγκέντρωση και στη Γυμναστική</h1>
-    <p>Την Παρασκευή η τάξη παρουσιάζει μια εργασία στην αίθουσα εκδηλώσεων. Την επόμενη ώρα έχει Γυμναστική. Η Σοφία χρησιμοποιεί αμαξίδιο. Θέλει να παρουσιάσει το μέρος της δουλειάς της και να πάρει μέρος στο ομαδικό παιχνίδι.</p>
+    <p class="intro">Την Παρασκευή η τάξη παρουσιάζει μια εργασία στην αίθουσα εκδηλώσεων. Την επόμενη ώρα έχει Γυμναστική. Η Σοφία χρησιμοποιεί αμαξίδιο. Έχει ετοιμάσει μέρος της παρουσίασης και θέλει να παίξει στο ομαδικό παιχνίδι.</p>
+    <div class="objective">
+      <div><strong>Στόχος</strong><span>Να μπορεί μια μαθήτρια να παρουσιάζει, να παρακολουθεί και να παίζει με τους συμμαθητές της.</span></div>
+      <div><strong>Τι παραδίδετε</strong><span>Οδηγίες για την παρουσίαση και μια πρόταση για το ομαδικό παιχνίδι.</span></div>
+    </div>
   </header>
-  <noscript><p>Για να ανοίξετε την αλλαγή στο σενάριο και να ετοιμάσετε την πρότασή σας χρειάζεται JavaScript.</p></noscript>
-  <div class="work">
-    <section class="panel" aria-labelledby="plan-title">
-      <h2 id="plan-title">Το πλάνο της ομάδας · 60 λεπτά</h2>
-      <ol class="plan">
-        <li><strong>5΄</strong> Διαβάστε την αποστολή. Ορίστε ποιος διαβάζει, ποιος γράφει και ποιος κρατά τον χρόνο.</li>
-        <li><strong>10΄</strong> Ανοίξτε τις τρεις κάρτες και πείτε ποια πληροφορία αλλάζει περισσότερο την πρότασή σας.</li>
-        <li><strong>15΄</strong> Συμφωνήστε στις τρεις απαντήσεις και γράψτε τις. Μετά πατήστε «Δείτε τι αλλάζει».</li>
-        <li><strong>15΄</strong> Διαβάστε το νέο δεδομένο. Πείτε τι από την αρχική πρόταση κρατάτε και τι αλλάζετε.</li>
-        <li><strong>10΄</strong> Ανταλλάξτε την πρότασή σας με άλλη ομάδα. Ζητήστε της να σας πει τι χρειάζεται διευκρίνιση.</li>
-        <li><strong>5΄</strong> Κάντε την τελική διόρθωση και αντιγράψτε την πρόταση.</li>
-      </ol>
-    </section>
-    <section class="panel" aria-labelledby="cards-title">
-      <h2 id="cards-title">1. Ανοίξτε τις κάρτες</h2>
-      <details><summary>Ο δρόμος ως την αίθουσα</summary><p>Η εσωτερική πόρτα της αίθουσας έχει σκαλοπάτι. Υπάρχει δεύτερη είσοδος από την αυλή χωρίς σκαλοπάτι. Η ενημέρωση του τμήματος λέει μόνο «πηγαίνετε στην αίθουσα εκδηλώσεων».</p></details>
-      <details><summary>Πού μιλούν και πού κάθονται</summary><p>Ο προβολέας φαίνεται και από το επίπεδο της αίθουσας. Οι προηγούμενες ομάδες συνήθως μιλούν από το βάθρο. Η Σοφία θέλει να μιλήσει δίπλα στους συμμαθητές της και μετά να καθίσει μαζί τους.</p></details>
-      <details><summary>Τι έχει κανονιστεί στη Γυμναστική</summary><p>Ο γυμναστής έχει προγραμματίσει ομαδικό παιχνίδι με πάσες. Η Σοφία λέει ότι θέλει να παίζει με την ομάδα της και να δέχεται πάσες. Στο παράδειγμα, από την αυλή υπάρχει ελεύθερη διαδρομή ως το γήπεδο.</p></details>
-      <p>Πριν γράψετε, συμφωνήστε τι θέλει να κάνει ο μαθητής ή η μαθήτρια και τι τον ή τη δυσκολεύει.</p>
-    </section>
-    <section class="panel" aria-labelledby="draft-title">
-      <h2 id="draft-title">2. Γράψτε την πρώτη πρόταση</h2>
-      <form id="proposal">
-      <label for="draft-1">Τι θα πείτε στο τμήμα πριν πάει στην αίθουσα;</label>
-      <textarea id="draft-1" rows="3" maxlength="500" required placeholder="Πείτε ποια είσοδο θα χρησιμοποιήσουν και πού θα συναντηθούν."></textarea>
+  <ol class="plan" aria-label="Βήματα της αποστολής">
+    <li aria-current="step"><strong>1. Διαβάστε</strong><span>15 λεπτά</span></li>
+    <li><strong>2. Προτείνετε</strong><span>15 λεπτά</span></li>
+    <li><strong>3. Προσαρμόστε</strong><span>15 λεπτά</span></li>
+    <li><strong>4. Ελέγξτε</strong><span>15 λεπτά</span></li>
+  </ol>
+  <noscript><p>Ενεργοποιήστε τη JavaScript για να προχωρήσετε στα βήματα και να αντιγράψετε την πρότασή σας.</p></noscript>
+  <section class="panel" aria-labelledby="read-title">
+    <p class="eyebrow">Βήμα 1 · 15 λεπτά</p>
+    <h2 id="read-title">Διαβάστε τι συμβαίνει</h2>
+    <div class="roles">
+      <h3>Μοιράστε τους ρόλους · 5 λεπτά</h3>
+      <p>Ένας διαβάζει τις κάρτες, ένας γράφει, ένας προσέχει τον χρόνο και ένας παρουσιάζει την πρόταση στην άλλη ομάδα. Όλοι λένε τη γνώμη τους.</p>
+    </div>
+    <h3>Ανοίξτε τις τρεις κάρτες · 10 λεπτά</h3>
+    <div class="cards">
+      <details><summary>Η είσοδος της αίθουσας</summary><p>Η εσωτερική πόρτα έχει σκαλοπάτι. Η δεύτερη είσοδος από την αυλή δεν έχει. Στην ανακοίνωση του τμήματος γράφει μόνο «πηγαίνετε στην αίθουσα εκδηλώσεων».</p></details>
+      <details><summary>Η σειρά της Σοφίας</summary><p>Συνήθως οι ομάδες μιλούν από το βάθρο. Ο προβολέας φαίνεται και όταν η ομάδα μιλά μπροστά, στο επίπεδο της αίθουσας. Η Σοφία θέλει να παρουσιάσει δίπλα στους συμμαθητές της και μετά να καθίσει μαζί τους.</p></details>
+      <details><summary>Το παιχνίδι στη Γυμναστική</summary><p>Ο γυμναστής έχει ετοιμάσει ομαδικό παιχνίδι με πάσες. Η Σοφία λέει «Θέλω να είμαι στην ομάδα μου και να παίρνω κι εγώ πάσες». Από την αυλή υπάρχει ελεύθερη διαδρομή μέχρι το γήπεδο.</p></details>
+    </div>
+    <p>Πριν γράψετε, συμφωνήστε ποιο εμπόδιο έχει τη μεγαλύτερη σημασία στην ιστορία και εξηγήστε γιατί.</p>
+    <button type="button" class="action" id="start">Γράψτε την πρώτη πρόταση</button>
+  </section>
+  <form id="proposal" novalidate>
+    <section class="panel" id="draft-panel" aria-labelledby="draft-title" hidden>
+      <p class="eyebrow">Βήμα 2 · 15 λεπτά</p>
+      <h2 id="draft-title" tabindex="-1">Γράψτε την πρώτη πρόταση</h2>
+      <p>Γράψτε μία ή δύο προτάσεις σε κάθε πεδίο. Χρησιμοποιήστε όσα μάθατε από τις κάρτες και πείτε ποιος αναλαμβάνει κάθε ενέργεια.</p>
+      <label for="draft-1">Τι θα πείτε στο τμήμα πριν ξεκινήσει;</label>
+      <p class="hint" id="hint-1">Γράψτε ποια είσοδο θα χρησιμοποιήσει η τάξη και πού θα συναντηθεί η ομάδα.</p>
+      <textarea id="draft-1" rows="3" maxlength="500" aria-describedby="hint-1" required></textarea>
       <label for="draft-2">Πού θα παρουσιάσει και πού θα καθίσει η ομάδα;</label>
-      <textarea id="draft-2" rows="3" maxlength="500" required placeholder="Προτείνετε μία θέση για την παρουσίαση και μία για όταν η ομάδα παρακολουθεί."></textarea>
-      <label for="draft-3">Τι θα συζητήσει ο γυμναστής με τη Σοφία;</label>
-      <textarea id="draft-3" rows="3" maxlength="500" required placeholder="Προτείνετε πώς θα μοιράζονται οι πάσες ή οι ρόλοι ώστε να παίρνουν μέρος όλοι. Πείτε τι θα ρωτήσετε πρώτα τη Σοφία."></textarea>
-        <button class="action" id="reveal" type="button">Δείτε τι αλλάζει</button>
-        <section class="compare" id="twist" aria-labelledby="twist-title" hidden>
-          <h3 id="twist-title" tabindex="-1">3. Κάτι άλλαξε</h3>
-          <p>Το γήπεδο είναι βρεγμένο και η Γυμναστική θα γίνει στον στεγασμένο χώρο. Εκεί χωρούν δύο μικρές ομάδες κάθε φορά. Ο γυμναστής κρατά το παιχνίδι με πάσες.</p>
-          <p>Πείτε πώς θα χωριστούν οι ομάδες, πώς θα αλλάζουν σειρά και ποιος θα παίζει σε κάθε γύρο. Η Σοφία πρέπει να μπορεί να παίξει μαζί με την ομάδα της, όπως ζήτησε.</p>
-          <label for="revision">Τι κρατάτε και τι αλλάζετε στην πρότασή σας;</label>
-          <textarea id="revision" rows="4" maxlength="700" disabled required placeholder="Γράψτε τι θα κάνετε τώρα και ποιος θα το αναλάβει."></textarea>
-          <h3>4. Συζητήστε με άλλη ομάδα</h3>
-          <p>Διαβάστε της την πρότασή σας. Ζητήστε να σας πει ποιο βήμα θα δυσκολευόταν να ακολουθήσει. Ακούστε και τη δική της πρόταση. Μετά διορθώστε την απάντησή σας πιο πάνω.</p>
-          <button class="action" type="submit">Ετοιμάστε την τελική πρόταση</button>
-        </section>
-      </form>
-      <div id="finding-output" hidden>
-        <label for="report"><strong>Η πρότασή σας</strong></label>
-        <textarea id="report" rows="10" readonly></textarea>
-        <button class="action" type="button" id="copy">Αντιγραφή πρότασης</button>
-        <p id="copy-status" role="status"></p>
-      </div>
+      <p class="hint" id="hint-2">Δώστε συγκεκριμένη θέση για όσους μιλούν και για όταν θα γίνουν ξανά θεατές.</p>
+      <textarea id="draft-2" rows="3" maxlength="500" aria-describedby="hint-2" required></textarea>
+      <label for="draft-3">Πώς θα παίζουν όλοι;</label>
+      <p class="hint" id="hint-3">Προτείνετε στον γυμναστή μία συμφωνία για τις πάσες ή τους ρόλους. Ποια ερώτηση θα κάνατε πρώτα στη Σοφία;</p>
+      <textarea id="draft-3" rows="3" maxlength="500" aria-describedby="hint-3" required></textarea>
+      <button type="button" class="action" id="reveal">Δείτε τι αλλάζει</button>
     </section>
-  </div>
+    <section class="panel" id="twist-panel" aria-labelledby="twist-title" hidden>
+      <p class="eyebrow">Βήμα 3 · 15 λεπτά</p>
+      <h2 id="twist-title" tabindex="-1">Κάτι άλλαξε</h2>
+      <div class="change"><p>Το γήπεδο είναι βρεγμένο. Ο γυμναστής μεταφέρει το παιχνίδι στον στεγασμένο χώρο, όπου μπορούν να παίζουν δύο μικρές ομάδες κάθε φορά. Το τμήμα έχει τέσσερις ομάδες.</p></div>
+      <p>Πείτε ποιες ομάδες παίζουν πρώτες, πότε αλλάζουν σειρά και πώς θα παίρνουν μέρος όλα τα μέλη μιας ομάδας στον γύρο τους. Ο γυμναστής αποφασίζει πώς γίνεται το παιχνίδι με ασφάλεια.</p>
+      <label for="keep">Τι κρατάτε από την πρώτη πρόταση;</label>
+      <p class="hint" id="keep-hint">Διαλέξτε ένα βήμα που εξακολουθεί να βοηθά. Πείτε γιατί.</p>
+      <textarea id="keep" rows="2" maxlength="500" aria-describedby="keep-hint" required></textarea>
+      <label for="revision">Τι αλλάζετε τώρα;</label>
+      <p class="hint" id="revision-hint">Γράψτε τη νέα οδηγία όπως θα τη λέγατε στο σχολείο. Πείτε ποιος θα κάνει τι.</p>
+      <textarea id="revision" rows="3" maxlength="700" aria-describedby="revision-hint" required></textarea>
+      <button type="button" class="action" id="peer">Δείξτε την πρόταση σε άλλη ομάδα</button>
+    </section>
+    <section class="panel" id="peer-panel" aria-labelledby="peer-title" hidden>
+      <p class="eyebrow">Βήμα 4 · 15 λεπτά</p>
+      <h2 id="peer-title" tabindex="-1">Ελέγξτε την πρότασή σας</h2>
+      <p><strong>10 λεπτά.</strong> Δώστε σε άλλη ομάδα ένα λεπτό για να ακούσει την πρότασή σας. Ζητήστε να χρησιμοποιήσει τις παρακάτω ερωτήσεις και να σας πει τι χρειάζεται διευκρίνιση. Μετά ακούστε τη δική της πρόταση.</p>
+      <ul class="checks">
+        <li>Μπορεί η Σοφία να παρουσιάσει με την ομάδα της και να καθίσει δίπλα της;</li>
+        <li>Έχει ρόλο στο παιχνίδι που θέλει η ίδια;</li>
+        <li>Ξέρουν όλες οι ομάδες πότε παίζουν και πού περιμένουν;</li>
+      </ul>
+      <p><strong>5 λεπτά.</strong> Συμφωνήστε σε μία τελική διόρθωση.</p>
+      <label for="final-note">Τι διευκρινίζετε μετά τη συζήτηση;</label>
+      <p class="hint" id="final-hint">Γράψτε την τελική διόρθωση. Αν κρατήσατε την πρόταση, εξηγήστε τι επιβεβαίωσε η άλλη ομάδα.</p>
+      <textarea id="final-note" rows="3" maxlength="500" aria-describedby="final-hint" required></textarea>
+      <button class="action" type="submit">Ετοιμάστε την τελική πρόταση</button>
+    </section>
+  </form>
+  <section class="panel" id="finding-output" aria-labelledby="output-title" hidden>
+    <h2 id="output-title">Η πρόταση της ομάδας</h2>
+    <label for="report">Κείμενο για τον κοινό πίνακα</label>
+    <textarea id="report" rows="10" readonly></textarea>
+    <button class="action secondary" type="button" id="copy">Αντιγραφή πρότασης</button>
+    <p id="copy-status" role="status"></p>
+  </section>
 </main>
 <footer>
-  <p>Οι περιπτώσεις είναι υποθετικά παραδείγματα για το μάθημα. Η διάταξη των χώρων ανήκει στην άσκηση.</p>
-  <p><a href="https://www.bromley.gov.uk/special-educational-needs/guide-physical-accessibility-schools-parents-carers">Πηγή έμπνευσης · Οδηγός του Bromley για τη φυσική προσβασιμότητα στα σχολεία</a></p>
+  <p>Οι ιστορίες και η διάταξη των χώρων είναι υποθετικές. Οι απαντήσεις διατηρούνται όσο χρησιμοποιείτε την ίδια καρτέλα.</p>
+  <p><a href="https://www.bromley.gov.uk/special-educational-needs/guide-physical-accessibility-schools-parents-carers">Οδηγός του Bromley για τη φυσική προσβασιμότητα στα σχολεία</a></p>
 </footer>
 <script>
 const byId = (id) => document.getElementById(id);
 const form = byId("proposal");
 const draft = ["draft-1", "draft-2", "draft-3"].map(byId);
-const revision = byId("revision");
+const changes = ["keep", "revision"].map(byId);
+const finalNote = byId("final-note");
+const fields = [...draft, ...changes, finalNote];
 const output = byId("finding-output");
 const report = byId("report");
 const copyStatus = byId("copy-status");
+const phases = document.querySelectorAll(".plan li");
+const panels = ["draft-panel", "twist-panel", "peer-panel"];
+const transitions = ["start", "reveal", "peer"];
+const sessionKey = "moveable-lesson-02-proposal:" + "04-parousiasi";
+let stage = 0;
+
+function showStage(index, focus = false) {
+  stage = index;
+  for (let i = 0; i < panels.length; i++) {
+    byId(panels[i]).hidden = i >= index;
+    byId(transitions[i]).hidden = i < index;
+  }
+  phases.forEach((item, i) => {
+    if (i === index) item.setAttribute("aria-current", "step");
+    else item.removeAttribute("aria-current");
+  });
+  if (focus) byId(panels[index - 1]).querySelector("h2").focus();
+}
+
+function saveDraft() {
+  try {
+    sessionStorage.setItem(sessionKey, JSON.stringify({ stage, values: fields.map(field => field.value) }));
+  } catch {
+    // The lesson can run when browser storage is unavailable.
+  }
+}
+
+function restoreDraft() {
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(sessionKey));
+    if (!saved || !Number.isInteger(saved.stage) || saved.stage < 1 || saved.stage > 3) return;
+    if (!Array.isArray(saved.values) || saved.values.length !== fields.length) return;
+    fields.forEach((field, index) => {
+      if (typeof saved.values[index] === "string") field.value = saved.values[index];
+    });
+    showStage(saved.stage);
+  } catch {
+    // Start at the first step if the saved work is unavailable.
+  }
+}
 
 function filled(field) {
   field.setCustomValidity(field.value.trim() ? "" : "Γράψτε την απάντηση της ομάδας σας.");
   return field.reportValidity();
 }
 
-byId("reveal").addEventListener("click", () => {
-  if (!draft.every(filled)) return;
-  byId("twist").hidden = false;
-  revision.disabled = false;
-  byId("reveal").hidden = true;
-  byId("twist-title").focus();
-});
+function advance(index, requiredFields = []) {
+  if (!requiredFields.every(filled)) return;
+  showStage(index, true);
+  saveDraft();
+}
+
+byId("start").addEventListener("click", () => advance(1));
+byId("reveal").addEventListener("click", () => advance(2, draft));
+byId("peer").addEventListener("click", () => advance(3, changes));
 
 form.addEventListener("input", (event) => {
   event.target.setCustomValidity("");
   output.hidden = true;
   copyStatus.textContent = "";
+  saveDraft();
 });
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (revision.disabled || ![...draft, revision].every(filled)) return;
+  if (stage !== 3 || !fields.every(filled)) return;
   report.value = [
-    "Ομάδα 4 από 4 · Στη συγκέντρωση και στη Γυμναστική",
-    ...draft.map((field) => field.labels[0].textContent + "\n" + field.value.trim()),
-    "Μετά την αλλαγή\n" + revision.value.trim()
+    "Ομάδα 4 · Στη συγκέντρωση και στη Γυμναστική",
+    ...fields.map(field => field.labels[0].textContent + "\n" + field.value.trim())
   ].join("\n\n");
   output.hidden = false;
   report.focus();
@@ -156,6 +252,7 @@ byId("copy").addEventListener("click", async () => {
     copyStatus.textContent = "Το κείμενο επιλέχθηκε. Χρησιμοποιήστε την αντιγραφή της συσκευής σας.";
   }
 });
+restoreDraft();
 </script>
 </body>
 </html>
