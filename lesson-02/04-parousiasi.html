@@ -55,7 +55,10 @@
   .checks { padding-inline-start: 1.35rem; }
   .checks li { margin-block: .25rem; }
   #report { background: var(--paper); }
-  #copy-status { margin-top: .6rem; }
+  #copy-status, #submission-status { margin-top: .6rem; }
+  #class-code { max-width: 100%; font: inherit; padding: .5rem; border: 1px solid #738980; border-radius: .4rem; }
+  #class-code:focus-visible { outline: 3px solid #a64b09; outline-offset: 3px; }
+  .action:disabled { opacity: .7; cursor: wait; }
   footer { color: var(--muted); margin-block: 1.5rem 2.5rem; }
   footer a { color: var(--accent); }
   @media (max-width: 38rem) {
@@ -152,6 +155,13 @@
     <textarea id="report" rows="10" readonly></textarea>
     <button class="action secondary" type="button" id="copy">Αντιγραφή πρότασης</button>
     <p id="copy-status" role="status"></p>
+    <form id="submit-proposal" hidden>
+      <label for="class-code">Κωδικός μαθήματος</label>
+      <p class="hint" id="submission-hint">Ζητήστε τον κωδικό από τον εκπαιδευτικό. Υποβάλετε μόνο το κείμενο της ομάδας, χωρίς πραγματικά ονόματα ή άλλα προσωπικά στοιχεία.</p>
+      <input type="password" id="class-code" autocomplete="off" maxlength="80" required aria-describedby="submission-hint">
+      <button class="action" type="submit">Υποβολή πρότασης</button>
+      <p id="submission-status" role="status"></p>
+    </form>
   </section>
 </main>
 <footer>
@@ -253,6 +263,80 @@ byId("copy").addEventListener("click", async () => {
   }
 });
 restoreDraft();
+
+if (document.body.dataset.classroom === "true") {
+  const submissionForm = byId("submit-proposal");
+  const status = byId("submission-status");
+  const button = submissionForm.querySelector("button");
+  const submissionKey = sessionKey + ":submission:" + document.body.dataset.classroomDate;
+  const task = "04-parousiasi";
+  let pending;
+
+  try {
+    pending = JSON.parse(sessionStorage.getItem(submissionKey));
+  } catch {
+    // Submission can still be retried without reloading.
+  }
+
+  function newRequestId() {
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 15) | 64;
+    bytes[8] = (bytes[8] & 63) | 128;
+    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, "0")).join("");
+    return [hex.slice(0, 8), hex.slice(8, 12), hex.slice(12, 16), hex.slice(16, 20), hex.slice(20)].join("-");
+  }
+
+  function rememberSubmission() {
+    try {
+      sessionStorage.setItem(submissionKey, JSON.stringify(pending));
+    } catch {
+      // The in-memory request still keeps retries consistent.
+    }
+  }
+
+  form.addEventListener("submit", () => {
+    status.textContent = pending?.proposal === report.value && pending.path
+      ? "Η πρόταση έχει ήδη υποβληθεί."
+      : "";
+  });
+
+  submissionForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    if (output.hidden || button.disabled) return;
+    if (pending?.proposal !== report.value) {
+      pending = { proposal: report.value, requestId: newRequestId() };
+      rememberSubmission();
+    }
+    if (pending.path) {
+      status.textContent = "Η πρόταση έχει ήδη υποβληθεί.";
+      return;
+    }
+    button.disabled = true;
+    status.textContent = "Η πρόταση υποβάλλεται…";
+    try {
+      const response = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ task, code: byId("class-code").value.trim(), proposal: pending.proposal, requestId: pending.requestId }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.path) {
+        status.textContent = result.error || "Δεν επιβεβαιώθηκε η υποβολή. Δοκιμάστε ξανά.";
+        return;
+      }
+      pending.path = result.path;
+      rememberSubmission();
+      byId("class-code").value = "";
+      status.textContent = "Η πρόταση υποβλήθηκε.";
+    } catch {
+      status.textContent = "Δεν επιβεβαιώθηκε η υποβολή. Δοκιμάστε ξανά.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  submissionForm.hidden = false;
+}
 </script>
 </body>
 </html>
